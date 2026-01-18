@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv3hdx2chuewo"]
+
+[ext_resource type="Script" uid="uid://d4favg6f3e6y7" path="res://scenes/main.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://b2ne3its788kk" path="res://assets/ramenShop.png" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bxojdv6nb3hbk" path="res://stuff/customer.tscn" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://q1ofrccqvhi6" path="res://buttons/cookingButton.tscn" id="5_85g3d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tbgi4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -95.0
+offset_top = -103.0
+offset_right = 1422.0
+offset_bottom = 785.0
+color = Color(0.9537712, 0.9537712, 0.95377105, 1)
+
+[node name="RamenShop" type="Sprite2D" parent="."]
+position = Vector2(680, 360)
+texture = ExtResource("2_tefeu")
+
+[node name="Customer" parent="." instance=ExtResource("3_o6xl0")]
+position = Vector2(552, 576)
+
+[node name="Pot Icon" parent="." instance=ExtResource("5_85g3d")]
+offset_left = 1104.0
+offset_top = 40.0
+offset_right = 1104.0
+offset_bottom = 40.0

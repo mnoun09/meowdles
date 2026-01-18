@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0wmu5b5yp2du"]
+
+[ext_resource type="Texture2D" uid="uid://b2ne3its788kk" path="res://assets/ramenShop.png" id="1_hc2nf"]
+[ext_resource type="PackedScene" uid="uid://bxojdv6nb3hbk" path="res://stuff/customer.tscn" id="2_yq57p"]
+[ext_resource type="PackedScene" uid="uid://di8oyf86iorou" path="res://buttons/startingButton.tscn" id="3_oud6e"]
+[ext_resource type="PackedScene" uid="uid://q1ofrccqvhi6" path="res://buttons/cookingButton.tscn" id="4_0cxnw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -95.0
+offset_top = -103.0
+offset_right = 1422.0
+offset_bottom = 785.0
+color = Color(0.9537712, 0.9537712, 0.95377105, 1)
+
+[node name="RamenShop" type="Sprite2D" parent="."]
+position = Vector2(688, 360)
+texture = ExtResource("1_hc2nf")
+
+[node name="Customer" parent="." instance=ExtResource("2_yq57p")]
+position = Vector2(536, 576)
+
+[node name="Control" parent="." instance=ExtResource("3_oud6e")]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="Control2" parent="." instance=ExtResource("4_0cxnw")]
+offset_left = 24.0
+offset_top = 152.0
+offset_right = 24.0
+offset_bottom = 152.0

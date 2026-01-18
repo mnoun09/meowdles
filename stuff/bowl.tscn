@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cabwuowuqttdh"]
+
+[ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_oqlhe"]
+[ext_resource type="Script" uid="uid://cp08revwln7ov" path="res://stuff/bowl.gd" id="2_ycmyd"]
+[ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_oqot4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnavn"]
+atlas = ExtResource("1_oqlhe")
+region = Rect2(431, 535, 478, 185)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_ycmyd")
+
+[node name="SoupsEmptyBowl" type="Sprite2D" parent="."]
+position = Vector2(624, 632)
+texture = SubResource("AtlasTexture_hnavn")
+
+[node name="Soup" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(592, 352)
+texture = ExtResource("3_oqot4")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://di8oyf86iorou"]
+
+[ext_resource type="Script" uid="uid://byrtbwmtepogs" path="res://buttons/customers_button.gd" id="1_b6w77"]
+[ext_resource type="Texture2D" uid="uid://f6teudgxehuv" path="res://assets/LeftIcons.png" id="1_y0ggr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6w77"]
+atlas = ExtResource("1_y0ggr")
+region = Rect2(16, 33, 154, 110)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6w77")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_b6w77")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
