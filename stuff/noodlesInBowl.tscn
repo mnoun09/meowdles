@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hse5jb66dpql"]
+
+[ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="1_f3viq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NoodlesInBowl" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(616, 376)
+texture = ExtResource("1_f3viq")

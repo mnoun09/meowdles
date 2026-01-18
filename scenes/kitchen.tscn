@@ -14,16 +14,19 @@ offset_bottom = 792.0
 mouse_filter = 2
 color = Color(0.9537712, 0.9537712, 0.95377105, 1)
 
-[node name="Area2D" parent="." instance=ExtResource("2_mrp8g")]
+[node name="Pot" parent="." instance=ExtResource("2_mrp8g")]
 position = Vector2(432, 248)
 
-[node name="Area2D2" parent="." instance=ExtResource("3_2b6py")]
+[node name="Bowl" parent="." instance=ExtResource("3_2b6py")]
 position = Vector2(16, 0)
 
-[node name="Control2" parent="." instance=ExtResource("3_bems3")]
+[node name="Pot2" parent="." instance=ExtResource("2_mrp8g")]
+position = Vector2(944, 248)
+
+[node name="Customers" parent="." instance=ExtResource("3_bems3")]
 offset_left = 24.0
 offset_top = 40.0
 offset_right = 24.0
 offset_bottom = 40.0
 
-[connection signal="potClicked" from="Area2D" to="Area2D2" method="_on_area_2d_pot_clicked"]
+[connection signal="potClicked" from="Pot" to="Bowl" method="_on_area_2d_pot_clicked"]

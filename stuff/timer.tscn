@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2hbwfko2e3r"]
+
+[ext_resource type="Texture2D" uid="uid://c6dc56743fou3" path="res://assets/Timer.png" id="1_ckxkr"]
+[ext_resource type="Script" uid="uid://ivixopnpcnaj" path="res://stuff/timer.gd" id="1_vhelp"]
+
+[node name="Timer" type="Node2D"]
+script = ExtResource("1_vhelp")
+
+[node name="Timer" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_ckxkr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 640.0
+offset_top = 96.0
+offset_right = 712.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[connection signal="timerDone" from="." to="." method="_on_timer_done"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

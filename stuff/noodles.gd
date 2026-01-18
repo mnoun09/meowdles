@@ -1,10 +1,9 @@
-extends Node2D
-@onready var soup = $Soup
-var next = preload("res://buttons/nextButton.tscn")
+extends Area2D
+
+signal noodlesClicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	pass # Replace with function body.
 
 
@@ -12,10 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_area_2d_pot_clicked() -> void:
-	soup.visible = true
-	var nextButton = next.instantiate()
-	nextButton.position = Vector2i(1008, 640)
-	add_child(nextButton)
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and event.is_pressed():
+		print("noodles in")
+		emit_signal("noodlesClicked")
 	pass # Replace with function body.

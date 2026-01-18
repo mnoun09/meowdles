@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce3jgm1wuqksr"]
+
+[ext_resource type="Script" uid="uid://blnotyjhivgyc" path="res://stuff/waterpot.gd" id="1_k3nni"]
+[ext_resource type="Texture2D" uid="uid://botkd8omcm170" path="res://assets/Waterpot.png" id="1_wrvjx"]
+[ext_resource type="Texture2D" uid="uid://cb6vqisa7fdim" path="res://assets/NoodlesInPot.png" id="2_k3nni"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_k3nni")
+
+[node name="Waterpot" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_wrvjx")
+
+[node name="NoodlesInPot" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 368)
+texture = ExtResource("2_k3nni")
