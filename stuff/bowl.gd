@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 @onready var soup = $Soup
 var next = preload("res://buttons/nextButton.tscn")
 

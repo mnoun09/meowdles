@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://chqgnwsmtj0xv"]
+
+[ext_resource type="Script" uid="uid://c3rw684b13o8f" path="res://stuff/toppings_station.gd" id="1_rtx4j"]
+[ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="1_ug07l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtx4j"]
+atlas = ExtResource("1_ug07l")
+region = Rect2(208, 43, 231, 251)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rtx4j")
+
+[node name="ToppingsStation" type="Sprite2D" parent="."]
+position = Vector2(336, 160)
+texture = SubResource("AtlasTexture_rtx4j")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-304, -200)
+polygon = PackedVector2Array(3.5, -125.5, -23, -125.5, -85.8, -98.5, -89.3, -98.5, -95.3, -92.5, -97.2, -92.5, -101.2, -65.5, -102.4, -65.5, -105.5, -10.599998, -105.5, -3.800003, -114, 0.5, -115.5, 0.5, -115.5, 17.300003, -114, 17.5, -111, 28.5, -111.5, 35.399994, -111.5, 55.600006, -105.5, 114.7, -105.5, 117.5, -95.5, 125.5, -82.6, 125.5, -82.2, 118.399994, -80.5, 119.600006, -80.5, 121, -64.9, 125.5, 1.699997, 125.5, 54.800003, 118.5, 61.699997, 118.5, 89.100006, 111.600006, 94.399994, 119.5, 105.7, 119.5, 109.7, 111.5, 111.600006, 111.5, 110.5, 80.399994, 110.5, 71.8, 115.5, 34.399994, 115.5, -92.6, 112.5, -94.6, 112.5, -96.4, 92.5, -97.5, 92.5, -98.5, 31.899994, -98.5, 27.899994, -108.5, 10.800003, -108.5, 3.5, -124.9)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

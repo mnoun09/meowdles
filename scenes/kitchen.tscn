@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="3_2b6py"]
 [ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="3_bems3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Kitchen" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -152.0

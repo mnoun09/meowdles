@@ -18,3 +18,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		print("click detected")
 		emit_signal("potClicked")
 	pass # Replace with function body.
+	

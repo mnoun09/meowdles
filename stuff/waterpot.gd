@@ -6,6 +6,7 @@ var next = preload("res://buttons/nextButton.tscn")
 var noodlesInBowl = preload("res://stuff/noodlesInBowl.tscn").instantiate()
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,6 +21,7 @@ func _on_noodles_noodles_clicked() -> void:
 	noodles.visible = true
 	addTimer()
 	timer.timerDone.connect(addNoodles)
+	
 	pass # Replace with function body.
 
 func addTimer():
@@ -28,3 +30,6 @@ func addTimer():
 
 func addNoodles():
 	add_child(noodlesInBowl)
+	var nextButton = next.instantiate()
+	nextButton.position = Vector2i(1008, 640)
+	add_child(nextButton)

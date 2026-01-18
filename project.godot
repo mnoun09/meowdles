@@ -15,6 +15,10 @@ run/main_scene="uid://cv3hdx2chuewo"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -25,6 +29,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+dropable=""
 
 [rendering]
 

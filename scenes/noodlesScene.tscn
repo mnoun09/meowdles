@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="4_h0e5y"]
 [ext_resource type="PackedScene" uid="uid://b2wf13xlnkctt" path="res://stuff/noodles.tscn" id="5_1lqxx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Noodles" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -152.0
