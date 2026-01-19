@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://uchgyudntaeh"]
+[gd_scene load_steps=12 format=3 uid="uid://uchgyudntaeh"]
 
 [ext_resource type="PackedScene" uid="uid://ce3jgm1wuqksr" path="res://stuff/waterpot.tscn" id="1_0r8yk"]
+[ext_resource type="Texture2D" uid="uid://botkd8omcm170" path="res://assets/Waterpot.png" id="1_l3ybn"]
 [ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="2_1lqxx"]
+[ext_resource type="Script" uid="uid://ddphhjxi63x2q" path="res://scenes/water.gd" id="2_m6ulc"]
 [ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="3_o1lbi"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="4_h0e5y"]
 [ext_resource type="PackedScene" uid="uid://b2wf13xlnkctt" path="res://stuff/noodles.tscn" id="5_1lqxx"]
+[ext_resource type="Texture2D" uid="uid://oe4dodjb1t3w" path="res://assets/Noodles.png" id="5_o1lbi"]
+[ext_resource type="Script" uid="uid://du0bct6rxgde7" path="res://scenes/noodles_2.gd" id="6_h0e5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0icsr"]
+atlas = ExtResource("1_l3ybn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3ybn"]
+atlas = ExtResource("5_o1lbi")
+region = Rect2(254, 181, 186, 122)
 
 [node name="Noodles" type="Node2D"]
 
@@ -16,7 +27,16 @@ offset_bottom = 792.0
 mouse_filter = 2
 color = Color(0.9537712, 0.9537712, 0.95377105, 1)
 
+[node name="water" type="TextureRect" parent="."]
+offset_left = 72.0
+offset_top = -64.0
+offset_right = 1352.0
+offset_bottom = 656.0
+texture = SubResource("AtlasTexture_0icsr")
+script = ExtResource("2_m6ulc")
+
 [node name="waterpot" parent="." instance=ExtResource("1_0r8yk")]
+visible = false
 position = Vector2(56, -88)
 
 [node name="Bowl" parent="." instance=ExtResource("2_1lqxx")]
@@ -31,6 +51,14 @@ offset_bottom = 40.0
 [node name="Soup" type="Sprite2D" parent="."]
 position = Vector2(608, 352)
 texture = ExtResource("4_h0e5y")
+
+[node name="noodles2" type="TextureRect" parent="."]
+offset_left = 256.0
+offset_top = 304.0
+offset_right = 442.0
+offset_bottom = 426.0
+texture = SubResource("AtlasTexture_l3ybn")
+script = ExtResource("6_h0e5y")
 
 [node name="noodles" parent="." instance=ExtResource("5_1lqxx")]
 position = Vector2(360, 208)

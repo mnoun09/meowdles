@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuqsaugqb64kb"]
+
+[ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_p73po"]
+[ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_40jdn"]
+[ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="3_fyujk"]
+[ext_resource type="Script" uid="uid://212swsh5e7l2" path="res://nori.gd" id="4_1c0ev"]
+[ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_40jdn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ujm"]
+atlas = ExtResource("1_p73po")
+region = Rect2(431, 535, 478, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgo57"]
+atlas = ExtResource("3_fyujk")
+region = Rect2(208, 43, 231, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyujk"]
+atlas = ExtResource("5_40jdn")
+region = Rect2(710, 478, 159, 131)
+
+[node name="dragNori" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="bowl" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 272.0
+offset_right = 910.0
+offset_bottom = 457.0
+texture = SubResource("AtlasTexture_u8ujm")
+script = ExtResource("2_40jdn")
+
+[node name="nori" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 128.0
+offset_right = 399.0
+offset_bottom = 379.0
+texture = SubResource("AtlasTexture_jgo57")
+script = ExtResource("4_1c0ev")
+
+[node name="nori2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 128.0
+offset_right = 399.0
+offset_bottom = 379.0
+texture = SubResource("AtlasTexture_fyujk")

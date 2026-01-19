@@ -33,19 +33,21 @@ func _input(event):
 			dropLocked = false
 			initialPos = global_position
 			dragging = true
-			#initialPos = global_position
 			offset = get_global_mouse_position() - global_position
+			print ("event")
 			
 		else:
 			global.isDragging = false
 			dragging = false
 			var tween = get_tree().create_tween()
-			dropLocked = insideDropable
 			
-			if dropLocked and bodyRef:
-				tween.tween_property(self, "global_position", bodyRef.global_position, 0.2).set_ease(Tween.EASE_OUT)
+			
+			if insideDropable and bodyRef:
+				print ("doing this")
+				#tween.tween_property(self, "global_position", bodyRef.global_position, 0.2).set_ease(Tween.EASE_OUT)
+
 			else:
-				print ("false")
+				print ("working")
 				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 
@@ -72,7 +74,7 @@ func _on_area_2d_body_entered(body: StaticBody2D) -> void:
 
 
 func _on_area_2d_body_exited(body: StaticBody2D) -> void:
-	if not body.is_in_group("dropable"):
+	if body.is_in_group("dropable"):
 		print ("not inside")
 		insideDropable = false
 

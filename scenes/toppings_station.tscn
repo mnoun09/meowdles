@@ -1,17 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=11 format=3 uid="uid://lmdmewm2x366"]
 
-[ext_resource type="Script" uid="uid://7egwk1oadnlj" path="res://scenes/toppings_station.gd" id="1_01y08"]
-[ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="1_hcmrr"]
-[ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="2_01y08"]
+[ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_01y08"]
+[ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_e44xq"]
-[ext_resource type="PackedScene" uid="uid://hse5jb66dpql" path="res://stuff/noodlesInBowl.tscn" id="4_pdhx1"]
-[ext_resource type="PackedScene" uid="uid://chqgnwsmtj0xv" path="res://stuff/toppingsStation.tscn" id="6_e44xq"]
+[ext_resource type="Script" uid="uid://212swsh5e7l2" path="res://nori.gd" id="4_pdhx1"]
+[ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_tymvg"]
 [ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="7_pdhx1"]
+[ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_tymvg"]
 
-[node name="toppingsStation" type="Node2D"]
-script = ExtResource("1_01y08")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ujm"]
+atlas = ExtResource("1_01y08")
+region = Rect2(431, 535, 478, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgo57"]
+atlas = ExtResource("7_pdhx1")
+region = Rect2(208, 43, 231, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyujk"]
+atlas = ExtResource("5_tymvg")
+region = Rect2(710, 478, 159, 131)
+
+[node name="dragNori" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -152.0
 offset_top = -96.0
 offset_right = 1365.0
@@ -19,24 +33,55 @@ offset_bottom = 792.0
 mouse_filter = 2
 color = Color(0.9537712, 0.9537712, 0.95377105, 1)
 
-[node name="Bowl" parent="." instance=ExtResource("1_hcmrr")]
-position = Vector2(16, 0)
+[node name="bowl" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 536.0
+offset_right = 974.0
+offset_bottom = 721.0
+texture = SubResource("AtlasTexture_u8ujm")
+script = ExtResource("2_e44xq")
 
-[node name="Customers" parent="." instance=ExtResource("2_01y08")]
-offset_left = 24.0
-offset_top = 40.0
-offset_right = 24.0
-offset_bottom = 40.0
+[node name="noriStation" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 32.0
+offset_right = 527.0
+offset_bottom = 283.0
+texture = SubResource("AtlasTexture_jgo57")
+script = ExtResource("4_pdhx1")
+
+[node name="noriBowl2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 680.0
+offset_top = 360.0
+offset_right = 911.0
+offset_bottom = 611.0
+texture = SubResource("AtlasTexture_fyujk")
+
+[node name="noriBowl" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 744.0
+offset_top = 408.0
+offset_right = 975.0
+offset_bottom = 659.0
+texture = SubResource("AtlasTexture_fyujk")
+
+[node name="nori2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 744.0
+offset_top = 408.0
+offset_right = 975.0
+offset_bottom = 659.0
+texture = SubResource("AtlasTexture_fyujk")
 
 [node name="Soup" type="Sprite2D" parent="."]
-position = Vector2(608, 352)
+position = Vector2(696, 352)
 texture = ExtResource("3_e44xq")
 
-[node name="Noodles" parent="." instance=ExtResource("4_pdhx1")]
-position = Vector2(656, 432)
-
-[node name="Node2D" parent="." instance=ExtResource("6_e44xq")]
-
-[node name="ToppingsStation" type="Sprite2D" parent="."]
-position = Vector2(648, 352)
-texture = ExtResource("7_pdhx1")
+[node name="Noodles" type="Sprite2D" parent="."]
+position = Vector2(736, 352)
+texture = ExtResource("7_tymvg")

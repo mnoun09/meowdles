@@ -1,5 +1,4 @@
 extends Area2D
-
 signal noodlesClicked
 
 # Called when the node enters the scene tree for the first time.
