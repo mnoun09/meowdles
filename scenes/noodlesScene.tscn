@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uchgyudntaeh"]
+[gd_scene load_steps=13 format=3 uid="uid://uchgyudntaeh"]
 
 [ext_resource type="PackedScene" uid="uid://ce3jgm1wuqksr" path="res://stuff/waterpot.tscn" id="1_0r8yk"]
 [ext_resource type="Texture2D" uid="uid://botkd8omcm170" path="res://assets/Waterpot.png" id="1_l3ybn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2wf13xlnkctt" path="res://stuff/noodles.tscn" id="5_1lqxx"]
 [ext_resource type="Texture2D" uid="uid://oe4dodjb1t3w" path="res://assets/Noodles.png" id="5_o1lbi"]
 [ext_resource type="Script" uid="uid://du0bct6rxgde7" path="res://scenes/noodles_2.gd" id="6_h0e5y"]
+[ext_resource type="Texture2D" uid="uid://cb6vqisa7fdim" path="res://assets/NoodlesInPot.png" id="10_m6ulc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0icsr"]
 atlas = ExtResource("1_l3ybn")
@@ -61,6 +62,12 @@ texture = SubResource("AtlasTexture_l3ybn")
 script = ExtResource("6_h0e5y")
 
 [node name="noodles" parent="." instance=ExtResource("5_1lqxx")]
+visible = false
 position = Vector2(360, 208)
+
+[node name="NoodlesInPot" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(728, 304)
+texture = ExtResource("10_m6ulc")
 
 [connection signal="noodlesClicked" from="noodles" to="waterpot" method="_on_noodles_noodles_clicked"]

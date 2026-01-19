@@ -1,26 +1,21 @@
-extends Control
-@onready var icon = $"."
+extends Node2D
+@onready var customer = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawn()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
-	print ("cooking")
-	pass # Replace with function body.
-
+	
 func spawn():
-	icon.modulate.a = 0.0
+	customer.modulate.a = 0.0
 	var tween = create_tween()
 
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(icon, "modulate:a", 1.0, 1.0)
+	tween.tween_property(customer, "modulate:a", 1.0, 1.0)
 	

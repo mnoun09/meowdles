@@ -1,6 +1,7 @@
 extends TextureRect
 var timerScene = preload("res://stuff/timer.tscn")
 var timer 
+@onready var noodlesInPot = $"../NoodlesInPot"
 var next = preload("res://buttons/nextButton.tscn")
 var noodlesInBowl = preload("res://stuff/noodlesInBowl.tscn").instantiate()
 @onready var bowl = $"../Bowl"
@@ -13,6 +14,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	#data.get_parent().remove_child(data)
 	#data = $"../nori2"
 	print ("noodles added")
+	noodlesInPot.visible = true
 	addTimer()
 	add_child(data)
 	timer.timerDone.connect(addNoodles)
@@ -26,5 +28,6 @@ func addNoodles():
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)
 	global.noodles = true
+	noodlesInPot.visible = false
 	bowl.makeVisible()
 	add_child(nextButton)
