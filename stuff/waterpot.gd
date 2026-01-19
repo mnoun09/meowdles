@@ -3,8 +3,6 @@ extends Node2D
 var timerScene = preload("res://stuff/timer.tscn")
 var timer 
 var next = preload("res://buttons/nextButton.tscn")
-var noodlesInBowl = preload("res://stuff/noodlesInBowl.tscn").instantiate()
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_noodles_noodles_clicked() -> void:
+	#noodles in pot
 	noodles.visible = true
 	addTimer()
 	timer.timerDone.connect(addNoodles)
@@ -29,7 +28,7 @@ func addTimer():
 	add_child(timer)
 
 func addNoodles():
-	add_child(noodlesInBowl)
+	global.userCreation.append("noodles")
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)
 	add_child(nextButton)

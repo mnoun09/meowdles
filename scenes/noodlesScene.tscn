@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://uchgyudntaeh"]
+[gd_scene load_steps=11 format=3 uid="uid://uchgyudntaeh"]
 
-[ext_resource type="PackedScene" uid="uid://ce3jgm1wuqksr" path="res://stuff/waterpot.tscn" id="1_0r8yk"]
 [ext_resource type="Texture2D" uid="uid://botkd8omcm170" path="res://assets/Waterpot.png" id="1_l3ybn"]
 [ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="2_1lqxx"]
 [ext_resource type="Script" uid="uid://ddphhjxi63x2q" path="res://scenes/water.gd" id="2_m6ulc"]
 [ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="3_o1lbi"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="4_h0e5y"]
-[ext_resource type="PackedScene" uid="uid://b2wf13xlnkctt" path="res://stuff/noodles.tscn" id="5_1lqxx"]
 [ext_resource type="Texture2D" uid="uid://oe4dodjb1t3w" path="res://assets/Noodles.png" id="5_o1lbi"]
 [ext_resource type="Script" uid="uid://du0bct6rxgde7" path="res://scenes/noodles_2.gd" id="6_h0e5y"]
 [ext_resource type="Texture2D" uid="uid://cb6vqisa7fdim" path="res://assets/NoodlesInPot.png" id="10_m6ulc"]
@@ -36,10 +34,6 @@ offset_bottom = 656.0
 texture = SubResource("AtlasTexture_0icsr")
 script = ExtResource("2_m6ulc")
 
-[node name="waterpot" parent="." instance=ExtResource("1_0r8yk")]
-visible = false
-position = Vector2(56, -88)
-
 [node name="Bowl" parent="." instance=ExtResource("2_1lqxx")]
 position = Vector2(16, 0)
 
@@ -61,13 +55,7 @@ offset_bottom = 426.0
 texture = SubResource("AtlasTexture_l3ybn")
 script = ExtResource("6_h0e5y")
 
-[node name="noodles" parent="." instance=ExtResource("5_1lqxx")]
-visible = false
-position = Vector2(360, 208)
-
 [node name="NoodlesInPot" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(728, 304)
 texture = ExtResource("10_m6ulc")
-
-[connection signal="noodlesClicked" from="noodles" to="waterpot" method="_on_noodles_noodles_clicked"]

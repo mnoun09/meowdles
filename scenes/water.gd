@@ -11,8 +11,6 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return false
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	#data.get_parent().remove_child(data)
-	#data = $"../nori2"
 	print ("noodles added")
 	noodlesInPot.visible = true
 	addTimer()
@@ -29,5 +27,7 @@ func addNoodles():
 	nextButton.position = Vector2i(1008, 640)
 	global.noodles = true
 	noodlesInPot.visible = false
+	global.userCreation.append("noodles")
+	#makes the noodles show
 	bowl.makeVisible()
 	add_child(nextButton)

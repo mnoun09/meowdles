@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_pot_clicked() -> void:
 	global.soup = true
+	global.userCreation.append("soup")
 	makeVisible()
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)

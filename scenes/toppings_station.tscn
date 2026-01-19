@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=12 format=3 uid="uid://lmdmewm2x366"]
 
 [ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_01y08"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_tymvg"]
 [ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="7_pdhx1"]
 [ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_tymvg"]
+[ext_resource type="PackedScene" uid="uid://1k86eulcapyu" path="res://buttons/doneButton.tscn" id="8_tymvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ujm"]
 atlas = ExtResource("1_01y08")
@@ -85,3 +86,10 @@ texture = ExtResource("3_e44xq")
 [node name="Noodles" type="Sprite2D" parent="."]
 position = Vector2(736, 352)
 texture = ExtResource("7_tymvg")
+
+[node name="Control" parent="." instance=ExtResource("8_tymvg")]
+layout_mode = 1
+offset_left = 1208.0
+offset_top = 664.0
+offset_right = 1208.0
+offset_bottom = 664.0
