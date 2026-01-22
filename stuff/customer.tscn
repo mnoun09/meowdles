@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxojdv6nb3hbk"]
+[gd_scene load_steps=5 format=3 uid="uid://bxojdv6nb3hbk"]
 
 [ext_resource type="Texture2D" uid="uid://cy1qj5iqpwe7k" path="res://assets/Customer.png" id="1_7tiyv"]
+[ext_resource type="Script" uid="uid://6ti3da316opc" path="res://stuff/customer.gd" id="1_p4eh1"]
 [ext_resource type="Texture2D" uid="uid://nktfvpywqmx3" path="res://assets/Bubble.png" id="2_xss0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8ta2"]
@@ -8,6 +9,9 @@ atlas = ExtResource("1_7tiyv")
 region = Rect2(378, 425, 181, 293)
 
 [node name="Customer" type="Node2D"]
+top_level = true
+z_index = 2
+script = ExtResource("1_p4eh1")
 
 [node name="Customer" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_r8ta2")

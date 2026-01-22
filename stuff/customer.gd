@@ -1,10 +1,9 @@
 extends Node2D
-@onready var customer = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawn()
-	global.order()
+	if global.customerExists == false:
+		fadeIn()
 	pass # Replace with function body.
 
 
@@ -12,11 +11,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func spawn():
-	customer.modulate.a = 0.0
+func fadeIn():
+	modulate.a = 0.0
 	var tween = create_tween()
-
+	print ("fade in")
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(customer, "modulate:a", 1.0, 1.0)
-	
+	tween.tween_property(self, "modulate:a", 1.0, 1.3)
+
+func remove():
+	modulate.a = 1
+	var tween = create_tween()
+	print ("fade out")
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(self, "modulate:a", 0, 1.3)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0fmowxnupe8k"]
+
+[ext_resource type="PackedScene" uid="uid://cv3hdx2chuewo" path="res://scenes/main.tscn" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://uchgyudntaeh" path="res://scenes/noodlesScene.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://lmdmewm2x366" path="res://scenes/toppings_station.tscn" id="3_7jktm"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Main" parent="." instance=ExtResource("1_feb5d")]
+position = Vector2(-48, -8)
+
+[node name="Noodles" parent="." instance=ExtResource("2_fc0e3")]
+visible = false
+position = Vector2(0, -8)
+
+[node name="dragNori" parent="." instance=ExtResource("3_7jktm")]
+visible = false
+offset_left = -48.0
+offset_right = -48.0
