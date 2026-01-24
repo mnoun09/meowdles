@@ -1,30 +1,60 @@
-[gd_scene load_steps=17 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=26 format=3 uid="uid://lmdmewm2x366"]
 
 [ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_01y08"]
+[ext_resource type="Texture2D" uid="uid://eqhyg81g5gye" path="res://assets/BetterAssets/Counter.png" id="1_h84if"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_e44xq"]
 [ext_resource type="Script" uid="uid://212swsh5e7l2" path="res://nori.gd" id="4_pdhx1"]
+[ext_resource type="Texture2D" uid="uid://bljixtwhvkx4b" path="res://assets/BetterAssets/Toppings.png" id="4_wofe7"]
 [ext_resource type="Script" uid="uid://c0uswkn6rhx6a" path="res://scenes/naruto.gd" id="5_hgd4p"]
 [ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_tymvg"]
-[ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="7_pdhx1"]
 [ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_tymvg"]
 [ext_resource type="PackedScene" uid="uid://1k86eulcapyu" path="res://buttons/doneButton.tscn" id="8_tymvg"]
 [ext_resource type="Script" uid="uid://cv8l8b2q8xu4s" path="res://scenes/egg.gd" id="10_102hl"]
 [ext_resource type="Script" uid="uid://cfpsvcp6kk0q5" path="res://scenes/bamboo.gd" id="11_h84if"]
 [ext_resource type="Script" uid="uid://yfs70hwjkgnx" path="res://scenes/greenOnion.gd" id="12_wofe7"]
 [ext_resource type="Script" uid="uid://cgx6yxj7d2gj0" path="res://scenes/chashu.gd" id="13_6hp1t"]
+[ext_resource type="Texture2D" uid="uid://b1l3yoltmt0w0" path="res://assets/BetterAssets/GreenOnions.png" id="15_wofe7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ujm"]
 atlas = ExtResource("1_01y08")
 region = Rect2(431, 535, 478, 185)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgo57"]
-atlas = ExtResource("7_pdhx1")
-region = Rect2(208, 43, 231, 251)
+atlas = ExtResource("4_wofe7")
+region = Rect2(41, 323, 127, 156)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyujk"]
 atlas = ExtResource("5_tymvg")
 region = Rect2(710, 478, 159, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hp1t"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(230, 369, 88, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84if"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(910, 360, 78, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wofe7"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(1005, 504, 116, 210)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ca0u"]
+atlas = ExtResource("15_wofe7")
+region = Rect2(1064, 585, 171, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y340w"]
+atlas = ExtResource("15_wofe7")
+region = Rect2(1082, 588, 123, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_201pe"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(1149, 424, 117, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuh7a"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(71, 545, 66, 65)
 
 [node name="dragNori" type="Control"]
 layout_mode = 3
@@ -37,69 +67,63 @@ offset_top = -96.0
 offset_right = 1365.0
 offset_bottom = 792.0
 mouse_filter = 2
-color = Color(0.9537712, 0.9537712, 0.95377105, 1)
+color = Color(1, 0.93333334, 0.8117647, 1)
+
+[node name="Counter" type="Sprite2D" parent="ColorRect"]
+position = Vector2(792, 456)
+texture = ExtResource("1_h84if")
 
 [node name="bowl" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 536.0
-offset_right = 974.0
-offset_bottom = 721.0
+offset_left = 432.0
+offset_top = 448.0
+offset_right = 910.0
+offset_bottom = 633.0
 texture = SubResource("AtlasTexture_u8ujm")
 script = ExtResource("2_e44xq")
 
+[node name="Soup" type="Sprite2D" parent="bowl"]
+position = Vector2(200, -184)
+texture = ExtResource("3_e44xq")
+
+[node name="Noodles" type="Sprite2D" parent="bowl"]
+position = Vector2(240, -184)
+texture = ExtResource("7_tymvg")
+
 [node name="noriStation" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 32.0
-offset_right = 527.0
-offset_bottom = 283.0
+offset_left = 40.0
+offset_top = 272.0
+offset_right = 271.0
+offset_bottom = 523.0
 texture = SubResource("AtlasTexture_jgo57")
 script = ExtResource("4_pdhx1")
-
-[node name="narutoStation" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 32.0
-offset_right = 807.0
-offset_bottom = 283.0
-texture = SubResource("AtlasTexture_jgo57")
-script = ExtResource("5_hgd4p")
-
-[node name="Label" type="Label" parent="narutoStation"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 128.0
-offset_right = 143.0
-offset_bottom = 177.0
-text = "Naruto
-"
 
 [node name="tempNaruto" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 560.0
-offset_top = 520.0
-offset_right = 600.0
-offset_bottom = 560.0
+offset_left = 512.0
+offset_top = 472.0
+offset_right = 552.0
+offset_bottom = 512.0
 color = Color(0.9604266, 0.50774413, 0.57276726, 1)
 
 [node name="noriBowl2" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 680.0
-offset_top = 360.0
-offset_right = 911.0
-offset_bottom = 611.0
+offset_left = 648.0
+offset_top = 288.0
+offset_right = 879.0
+offset_bottom = 539.0
 texture = SubResource("AtlasTexture_fyujk")
 
 [node name="noriBowl" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 744.0
-offset_top = 408.0
-offset_right = 975.0
-offset_bottom = 659.0
+offset_left = 720.0
+offset_top = 336.0
+offset_right = 951.0
+offset_bottom = 587.0
 texture = SubResource("AtlasTexture_fyujk")
 
 [node name="nori2" type="TextureRect" parent="."]
@@ -111,14 +135,6 @@ offset_right = 975.0
 offset_bottom = 659.0
 texture = SubResource("AtlasTexture_fyujk")
 
-[node name="Soup" type="Sprite2D" parent="."]
-position = Vector2(696, 352)
-texture = ExtResource("3_e44xq")
-
-[node name="Noodles" type="Sprite2D" parent="."]
-position = Vector2(736, 352)
-texture = ExtResource("7_tymvg")
-
 [node name="DoneButton" parent="." instance=ExtResource("8_tymvg")]
 layout_mode = 1
 offset_left = 1208.0
@@ -126,106 +142,95 @@ offset_top = 664.0
 offset_right = 1208.0
 offset_bottom = 664.0
 
-[node name="Egg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 824.0
-offset_top = 40.0
-offset_right = 1055.0
-offset_bottom = 291.0
-texture = SubResource("AtlasTexture_jgo57")
-script = ExtResource("10_102hl")
-
-[node name="Label" type="Label" parent="Egg"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 128.0
-offset_right = 143.0
-offset_bottom = 177.0
-text = "Egg"
-
-[node name="Bamboo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 288.0
-offset_top = 296.0
-offset_right = 519.0
-offset_bottom = 547.0
-texture = SubResource("AtlasTexture_jgo57")
-script = ExtResource("11_h84if")
-
-[node name="Label" type="Label" parent="Bamboo"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 128.0
-offset_right = 143.0
-offset_bottom = 177.0
-text = "Bamboo"
-
-[node name="GreenOnion" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 568.0
-offset_top = 296.0
-offset_right = 799.0
-offset_bottom = 547.0
-texture = SubResource("AtlasTexture_jgo57")
-script = ExtResource("12_wofe7")
-
-[node name="Label" type="Label" parent="GreenOnion"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 128.0
-offset_right = 143.0
-offset_bottom = 177.0
-text = "Green Onion"
-
-[node name="Chashu" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 824.0
-offset_top = 304.0
-offset_right = 1055.0
-offset_bottom = 555.0
-texture = SubResource("AtlasTexture_jgo57")
-script = ExtResource("13_6hp1t")
-
-[node name="Label" type="Label" parent="Chashu"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 128.0
-offset_right = 143.0
-offset_bottom = 177.0
-text = "Chashu"
-
 [node name="tempEgg" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 568.0
-offset_top = 600.0
-offset_right = 616.0
-offset_bottom = 640.0
+offset_left = 560.0
+offset_top = 512.0
+offset_right = 608.0
+offset_bottom = 552.0
 color = Color(0.99193865, 0.9554681, 0.8238136, 1)
 
 [node name="tempBamboo" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 656.0
-offset_top = 576.0
-offset_right = 704.0
-offset_bottom = 616.0
+offset_left = 664.0
+offset_top = 512.0
+offset_right = 712.0
+offset_bottom = 552.0
 color = Color(0.9019608, 0.57254905, 0.14117648, 1)
 
 [node name="tempGreenOnion" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 728.0
-offset_top = 616.0
+offset_top = 496.0
 offset_right = 776.0
-offset_bottom = 656.0
+offset_bottom = 536.0
 color = Color(0.21176471, 0.7607843, 0.23921569, 1)
 
 [node name="tempChashu" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 864.0
-offset_top = 584.0
-offset_right = 912.0
-offset_bottom = 624.0
+offset_left = 792.0
+offset_top = 520.0
+offset_right = 840.0
+offset_bottom = 560.0
 color = Color(0.62582994, 0.21876925, 0.012570693, 1)
+
+[node name="Egg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 456.0
+offset_right = 360.0
+offset_bottom = 571.0
+texture = SubResource("AtlasTexture_6hp1t")
+script = ExtResource("10_102hl")
+
+[node name="Bamboo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 384.0
+offset_right = 1014.0
+offset_bottom = 533.0
+texture = SubResource("AtlasTexture_h84if")
+script = ExtResource("11_h84if")
+
+[node name="GreenOnion" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 464.0
+offset_right = 1116.0
+offset_bottom = 674.0
+texture = SubResource("AtlasTexture_wofe7")
+script = ExtResource("12_wofe7")
+
+[node name="GreenOnionBowl" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(682.75, 522)
+scale = Vector2(1.3421053, 1.5)
+texture = SubResource("AtlasTexture_8ca0u")
+
+[node name="GreenOnionPrev" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(9.25, 8.25)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_y340w")
+
+[node name="Chashu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 392.0
+offset_right = 1245.0
+offset_bottom = 496.0
+texture = SubResource("AtlasTexture_201pe")
+script = ExtResource("13_6hp1t")
+
+[node name="Naruto" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 552.0
+offset_right = 130.0
+offset_bottom = 617.0
+texture = SubResource("AtlasTexture_wuh7a")
+script = ExtResource("5_hgd4p")

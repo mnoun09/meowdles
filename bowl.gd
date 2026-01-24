@@ -6,7 +6,7 @@ extends TextureRect
 @onready var tempNaruto = $"../tempNaruto"
 @onready var tempEgg = $"../tempEgg"
 @onready var tempBamboo = $"../tempBamboo"
-@onready var tempGreenOnion = $"../tempGreenOnion"
+@onready var tempGreenOnion = $"../GreenOnionBowl"
 @onready var tempChashu = $"../tempChashu"
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:

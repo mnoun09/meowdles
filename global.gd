@@ -147,12 +147,15 @@ func spawn(scene: PackedScene):
 	instance.queue_free()
 
 func checkingIngredients() -> bool:
-	var orderSize = customerOrder.size()
-	var correct: int
+	var orderSize = customerOrder.size() 
+	var correct : int
+	var amountAdded : int
 	if customerOrder.has("soup") and userCreation.has("soup"):
 		correct +=1
+		amountAdded +=1
 	if customerOrder.has("noodles") and userCreation.has("noodles"):
 		correct +=1
+		amountAdded +=1
 	if customerOrder.has("nori") and userCreation.has("nori"):
 		correct +=1
 	if customerOrder.has("naruto") and userCreation.has("naruto"):
@@ -165,6 +168,6 @@ func checkingIngredients() -> bool:
 		correct +=1
 	if customerOrder.has("chashu")  and userCreation.has("chashu"):
 		correct +=1
-	if correct == orderSize:
+	if correct == orderSize and userCreation.size() == orderSize:
 		return true
 	return false
