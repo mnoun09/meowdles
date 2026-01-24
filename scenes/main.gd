@@ -1,5 +1,6 @@
 extends Node2D
 var customerLoad = preload("res://stuff/customer.tscn")
+var orderPreview = preload("res://stuff/order_preview.tscn")
 var customerInstance = null
 
 func _ready() -> void:
@@ -16,6 +17,8 @@ func loadCustomer():
 		add_child(customerInstance)
 		print ("customer loaded")
 		global.order()
+		global.customerOrderPreview()
+		showOrderPreview()
 		global.customerExists = true
 	else: 
 		customerInstance = customerLoad.instantiate()
@@ -41,3 +44,9 @@ func clearCustomer():
 		customerInstance = null
 		print ("customer cleared")
 	pass
+	
+func showOrderPreview():
+	var instance = orderPreview.instantiate()
+	instance.position = Vector2(630, 450)
+	instance.z_index = 999
+	add_child(instance)

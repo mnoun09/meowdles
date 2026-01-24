@@ -121,3 +121,67 @@ offset_left = 1208.0
 offset_top = 664.0
 offset_right = 1208.0
 offset_bottom = 664.0
+
+[node name="Egg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 40.0
+offset_right = 1055.0
+offset_bottom = 291.0
+texture = SubResource("AtlasTexture_jgo57")
+
+[node name="Label" type="Label" parent="Egg"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 143.0
+offset_bottom = 177.0
+text = "Egg"
+
+[node name="Bamboo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 296.0
+offset_right = 519.0
+offset_bottom = 547.0
+texture = SubResource("AtlasTexture_jgo57")
+
+[node name="Label" type="Label" parent="Bamboo"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 143.0
+offset_bottom = 177.0
+text = "Bamboo"
+
+[node name="GreenOnion" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 296.0
+offset_right = 799.0
+offset_bottom = 547.0
+texture = SubResource("AtlasTexture_jgo57")
+
+[node name="Label" type="Label" parent="GreenOnion"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 143.0
+offset_bottom = 177.0
+text = "Green Onion"
+
+[node name="Chashu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 304.0
+offset_right = 1055.0
+offset_bottom = 555.0
+texture = SubResource("AtlasTexture_jgo57")
+
+[node name="Label" type="Label" parent="Chashu"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 143.0
+offset_bottom = 177.0
+text = "Chashu"

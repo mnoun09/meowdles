@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://5u3ouqtu3glj"]
+
+[ext_resource type="Texture2D" uid="uid://kbkgipxh7gfh" path="res://assets/BowlBubble.png" id="1_41cj0"]
+[ext_resource type="Script" uid="uid://bs5hmcwc2p5xo" path="res://stuff/order_preview.gd" id="1_eygpk"]
+
+[node name="OrderPreview" type="Node2D"]
+script = ExtResource("1_eygpk")
+
+[node name="BowlBubble" type="Sprite2D" parent="."]
+position = Vector2(56, -64)
+texture = ExtResource("1_41cj0")
+
+[node name="Soup" type="ColorRect" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 48.0
+offset_bottom = -8.0
+color = Color(0.50519514, 0.30547407, 9.62615e-08, 1)
+
+[node name="Noodles" type="ColorRect" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 48.0
+offset_bottom = -24.0
+color = Color(0.82990444, 0.64606065, 0.31705004, 1)
+
+[node name="Naruto" type="ColorRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = -24.0
+offset_right = 72.0
+offset_bottom = -8.0
+color = Color(0.912314, 0.2716998, 0.25278953, 1)
+
+[node name="Nori" type="ColorRect" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -40.0
+color = Color(0.07164582, 0.32110587, 0.16953772, 1)
+
+[node name="Egg" type="ColorRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 72.0
+offset_bottom = -24.0
+color = Color(0.99193865, 0.9554681, 0.8238136, 1)
+
+[node name="GreenOnion" type="ColorRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = -56.0
+offset_right = 72.0
+offset_bottom = -40.0
+color = Color(0.9137255, 0.9490196, 0.2509804, 1)
+
+[node name="Bamboo" type="ColorRect" parent="."]
+visible = false
+offset_left = 72.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = -24.0
+color = Color(0.9887386, 0.7322869, 0.5030143, 1)
+
+[node name="Chashu" type="ColorRect" parent="."]
+visible = false
+offset_left = 72.0
+offset_top = -24.0
+offset_right = 96.0
+offset_bottom = -8.0
+color = Color(0.5130795, 0.12710789, 0.08991929, 1)

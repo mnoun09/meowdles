@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv3hdx2chuewo"]
+[gd_scene load_steps=7 format=3 uid="uid://cv3hdx2chuewo"]
 
 [ext_resource type="Script" uid="uid://d4favg6f3e6y7" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b2ne3its788kk" path="res://assets/ramenShop.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b4vygu6lldpky" path="res://assets/BetterAssets/Storefront.png" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://q1ofrccqvhi6" path="res://buttons/cookingButton.tscn" id="5_85g3d"]
 [ext_resource type="Texture2D" uid="uid://tuk1igra2ga3" path="res://assets/BetterAssets/Cat.png" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c8qiautnqvut1" path="res://buttons/shop.tscn" id="6_tefeu"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tbgi4")
@@ -34,3 +35,9 @@ texture = ExtResource("4_jyhfs")
 [node name="Cat" type="Sprite2D" parent="."]
 position = Vector2(696, 360)
 texture = ExtResource("5_tbgi4")
+
+[node name="Shop" parent="." instance=ExtResource("6_tefeu")]
+offset_left = 1120.0
+offset_top = 200.0
+offset_right = 1120.0
+offset_bottom = 200.0
