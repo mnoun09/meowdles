@@ -8,6 +8,6 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	set_drag_preview(prev)
 	
 	return {
-		"type": "nori",
+		"type": "naruto",
 		"node": self
 	}

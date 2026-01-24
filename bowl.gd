@@ -8,14 +8,17 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return false
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	#data.get_parent().remove_child(data)
-	data = $"../nori2"
-	print ("added")
-	global.noriCount += 1
-	global.nori = true
-	noriBowl.visible = global.nori
-	if global.noriCount > 1 :
-		noriBowl2.visible = global.nori
-	print (global.nori)
-	add_child(data)
+	var item = data.node
+	var type = data.type
+	print(type)
+	if type == "nori":
+		data = $"../nori2"
+		print ("added")
+		global.noriCount += 1
+		global.nori = true
+		noriBowl.visible = global.nori
+		if global.noriCount > 1 :
+			noriBowl2.visible = global.nori
+		print (global.nori)
+		add_child(data)
 	

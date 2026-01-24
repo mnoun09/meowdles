@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxojdv6nb3hbk"]
+[gd_scene load_steps=7 format=3 uid="uid://bxojdv6nb3hbk"]
 
 [ext_resource type="Texture2D" uid="uid://cy1qj5iqpwe7k" path="res://assets/Customer.png" id="1_7tiyv"]
 [ext_resource type="Script" uid="uid://6ti3da316opc" path="res://stuff/customer.gd" id="1_p4eh1"]
 [ext_resource type="Texture2D" uid="uid://nktfvpywqmx3" path="res://assets/Bubble.png" id="2_xss0h"]
+[ext_resource type="Texture2D" uid="uid://c64swqwdjwvua" path="res://assets/BetterAssets/NewCustomer.png" id="4_r76ig"]
+[ext_resource type="Texture2D" uid="uid://dhandmtwxf66a" path="res://assets/BetterAssets/ThoughtBubble.png" id="5_3wvxb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8ta2"]
 atlas = ExtResource("1_7tiyv")
@@ -14,8 +16,18 @@ z_index = 2
 script = ExtResource("1_p4eh1")
 
 [node name="Customer" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("AtlasTexture_r8ta2")
 
 [node name="Bubble" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(192, -224)
 texture = ExtResource("2_xss0h")
+
+[node name="NewCustomer" type="Sprite2D" parent="."]
+position = Vector2(136, -216)
+texture = ExtResource("4_r76ig")
+
+[node name="ThoughtBubble" type="Sprite2D" parent="."]
+position = Vector2(144, -232)
+texture = ExtResource("5_3wvxb")

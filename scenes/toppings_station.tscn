@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=13 format=3 uid="uid://lmdmewm2x366"]
 
 [ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_01y08"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_e44xq"]
 [ext_resource type="Script" uid="uid://212swsh5e7l2" path="res://nori.gd" id="4_pdhx1"]
+[ext_resource type="Script" uid="uid://c0uswkn6rhx6a" path="res://scenes/naruto.gd" id="5_hgd4p"]
 [ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_tymvg"]
 [ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="7_pdhx1"]
 [ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_tymvg"]
@@ -51,6 +52,33 @@ offset_right = 527.0
 offset_bottom = 283.0
 texture = SubResource("AtlasTexture_jgo57")
 script = ExtResource("4_pdhx1")
+
+[node name="narutoStation" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 32.0
+offset_right = 807.0
+offset_bottom = 283.0
+texture = SubResource("AtlasTexture_jgo57")
+script = ExtResource("5_hgd4p")
+
+[node name="Label" type="Label" parent="narutoStation"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 128.0
+offset_right = 143.0
+offset_bottom = 177.0
+text = "Naruto
+"
+
+[node name="tempNaruto" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 560.0
+offset_top = 520.0
+offset_right = 600.0
+offset_bottom = 560.0
+color = Color(0.9604266, 0.50774413, 0.57276726, 1)
 
 [node name="noriBowl2" type="TextureRect" parent="."]
 visible = false
