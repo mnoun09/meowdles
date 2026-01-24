@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1ae2ph0cjat2"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ae2ph0cjat2"]
 
 [ext_resource type="Script" uid="uid://7egwk1oadnlj" path="res://scenes/toppings_station.gd" id="1_5s40q"]
 [ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="2_pg2s0"]
-[ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="3_7bjpb"]
 [ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="4_22qjo"]
 [ext_resource type="PackedScene" uid="uid://hse5jb66dpql" path="res://stuff/noodlesInBowl.tscn" id="5_8v64c"]
 [ext_resource type="PackedScene" uid="uid://chqgnwsmtj0xv" path="res://stuff/toppingsStation.tscn" id="6_i15on"]
@@ -21,12 +20,6 @@ color = Color(0.9537712, 0.9537712, 0.95377105, 1)
 
 [node name="Bowl" parent="." instance=ExtResource("2_pg2s0")]
 position = Vector2(16, 0)
-
-[node name="Customers" parent="." instance=ExtResource("3_7bjpb")]
-offset_left = 24.0
-offset_top = 40.0
-offset_right = 24.0
-offset_bottom = 40.0
 
 [node name="Soup" type="Sprite2D" parent="."]
 position = Vector2(608, 352)

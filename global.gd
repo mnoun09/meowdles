@@ -3,7 +3,7 @@ extends Node
 signal checking
 
 var customerLoad = preload("res://stuff/customer.tscn")
-var correct = preload("res://stuff/same.tscn")
+var correctReactions = [preload("res://stuff/same.tscn"), preload("res://stuff/same1.tscn")]
 var wrong = preload("res://stuff/wrong.tscn")
 
 var isDragging = false
@@ -39,45 +39,31 @@ var wantChashuCount: int
 
 var toppings = ["nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
 
-#not needed rn
-var bowlPNG = "res://assets/SoupsEmptyBowl.png"
-
 var customerOrder = ["soup", "noodles"]
 var userCreation = []
 
 var customerInstance = customerLoad.instantiate()
 var customerExists = false
 
-
 func _ready() -> void:
-	
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 #put customer reaction here
 func check():
-	
 	print (userCreation)
 	emit_signal("checking")
 	print ("checking")
-	if customerOrder == userCreation:
+	if checkingIngredients():
 		print ("same")
-		spawn(correct)
+		spawn(correctReactions.pick_random())
 	else:
 		print ("wrong")
 		spawn(wrong)
-		
-	await get_tree().create_timer(2.0).timeout
-	
-	#customer.remove()
+	await get_tree().create_timer(2.0).timeout	
 	reset() 
-	#get customer order list count 
-	#check arrays
-	#get amount of false/trues 
-	#generate percentage?
 
 func order():
 	if customerOrder == ["soup", "noodles"]:
@@ -87,7 +73,6 @@ func order():
 			customerOrder.append(topping)
 			toppings.erase(topping)
 			print (topping)
-		#count amount of each topping
 	print (customerOrder)
 	
 func reset():
@@ -129,7 +114,6 @@ func reset():
 	wantChashuCount = 0
 	
 func customerOrderPreview():
-
 	if customerOrder.has("soup"):
 		wantSoup = true
 	if customerOrder.has("noodles"):
@@ -161,3 +145,26 @@ func spawn(scene: PackedScene):
 	add_child(instance)
 	await get_tree().create_timer(0.9).timeout
 	instance.queue_free()
+
+func checkingIngredients() -> bool:
+	var orderSize = customerOrder.size()
+	var correct: int
+	if customerOrder.has("soup") and userCreation.has("soup"):
+		correct +=1
+	if customerOrder.has("noodles") and userCreation.has("noodles"):
+		correct +=1
+	if customerOrder.has("nori") and userCreation.has("nori"):
+		correct +=1
+	if customerOrder.has("naruto") and userCreation.has("naruto"):
+		correct +=1
+	if customerOrder.has("egg") and userCreation.has("egg"):
+		correct +=1
+	if customerOrder.has("bamboo") and userCreation.has("bamboo"):
+		correct +=1
+	if customerOrder.has("greenOnion") and userCreation.has("greenOnion"):
+		correct +=1
+	if customerOrder.has("chashu")  and userCreation.has("chashu"):
+		correct +=1
+	if correct == orderSize:
+		return true
+	return false

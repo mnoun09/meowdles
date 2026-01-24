@@ -1,12 +1,13 @@
 extends StaticBody2D
 @onready var soup = $Soup
-@onready var noodles = $Noodles
+@onready var noodles = $NoodlesInBowl
 @onready var nori = $Nori
 @onready var naruto = $Naruto
 var next = preload("res://buttons/nextButton.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	makeVisible()
 	ingredients()
 	pass # Replace with function body.
 
