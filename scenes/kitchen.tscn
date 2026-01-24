@@ -21,13 +21,13 @@ position = Vector2(640, 360)
 texture = ExtResource("1_bems3")
 
 [node name="Pot" parent="." instance=ExtResource("2_mrp8g")]
-position = Vector2(432, 248)
+position = Vector2(576, 288)
 
 [node name="Bowl" parent="." instance=ExtResource("3_2b6py")]
-position = Vector2(16, 0)
+position = Vector2(-408, -48)
 
 [node name="Pot2" parent="." instance=ExtResource("2_mrp8g")]
-position = Vector2(944, 248)
+position = Vector2(1032, 288)
 
 [node name="Customers" parent="." instance=ExtResource("3_bems3")]
 visible = false
@@ -37,3 +37,4 @@ offset_right = 24.0
 offset_bottom = 40.0
 
 [connection signal="potClicked" from="Pot" to="Bowl" method="_on_area_2d_pot_clicked"]
+[connection signal="potClicked" from="Pot2" to="Bowl" method="_on_pot_2_pot_clicked"]

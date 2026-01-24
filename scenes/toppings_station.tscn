@@ -1,14 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=30 format=3 uid="uid://lmdmewm2x366"]
 
-[ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_01y08"]
 [ext_resource type="Texture2D" uid="uid://eqhyg81g5gye" path="res://assets/BetterAssets/Counter.png" id="1_h84if"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
-[ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_e44xq"]
+[ext_resource type="Texture2D" uid="uid://dmxdi0hxscby5" path="res://assets/BetterAssets/PotsandBowl.png" id="2_wofe7"]
+[ext_resource type="Texture2D" uid="uid://bel5e8lg5tu0r" path="res://assets/BetterAssets/Shoyu.png" id="4_6hp1t"]
 [ext_resource type="Script" uid="uid://212swsh5e7l2" path="res://nori.gd" id="4_pdhx1"]
 [ext_resource type="Texture2D" uid="uid://bljixtwhvkx4b" path="res://assets/BetterAssets/Toppings.png" id="4_wofe7"]
+[ext_resource type="Texture2D" uid="uid://dq5f3qh61mmim" path="res://assets/BetterAssets/NoodlesinBowl.png" id="5_201pe"]
 [ext_resource type="Script" uid="uid://c0uswkn6rhx6a" path="res://scenes/naruto.gd" id="5_hgd4p"]
 [ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_tymvg"]
-[ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_tymvg"]
+[ext_resource type="Texture2D" uid="uid://qq2xjsiu1l1g" path="res://assets/BetterAssets/DoubleNori.png" id="6_201pe"]
+[ext_resource type="Texture2D" uid="uid://biohs2bl1u221" path="res://assets/BetterAssets/SoloNori.png" id="7_6hp1t"]
 [ext_resource type="PackedScene" uid="uid://1k86eulcapyu" path="res://buttons/doneButton.tscn" id="8_tymvg"]
 [ext_resource type="Script" uid="uid://cv8l8b2q8xu4s" path="res://scenes/egg.gd" id="10_102hl"]
 [ext_resource type="Script" uid="uid://cfpsvcp6kk0q5" path="res://scenes/bamboo.gd" id="11_h84if"]
@@ -17,12 +19,20 @@
 [ext_resource type="Texture2D" uid="uid://b1l3yoltmt0w0" path="res://assets/BetterAssets/GreenOnions.png" id="15_wofe7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ujm"]
-atlas = ExtResource("1_01y08")
-region = Rect2(431, 535, 478, 185)
+atlas = ExtResource("2_wofe7")
+region = Rect2(24, 400, 408, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgo57"]
 atlas = ExtResource("4_wofe7")
 region = Rect2(41, 323, 127, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyyfw"]
+atlas = ExtResource("6_201pe")
+region = Rect2(252, 345, 136, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uytxe"]
+atlas = ExtResource("7_6hp1t")
+region = Rect2(295, 345, 93, 130)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyujk"]
 atlas = ExtResource("5_tymvg")
@@ -75,20 +85,13 @@ texture = ExtResource("1_h84if")
 
 [node name="bowl" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 448.0
-offset_right = 910.0
-offset_bottom = 633.0
+offset_left = 352.0
+offset_top = 288.0
+offset_right = 968.0
+offset_bottom = 704.0
 texture = SubResource("AtlasTexture_u8ujm")
+stretch_mode = 5
 script = ExtResource("2_e44xq")
-
-[node name="Soup" type="Sprite2D" parent="bowl"]
-position = Vector2(200, -184)
-texture = ExtResource("3_e44xq")
-
-[node name="Noodles" type="Sprite2D" parent="bowl"]
-position = Vector2(240, -184)
-texture = ExtResource("7_tymvg")
 
 [node name="noriStation" type="TextureRect" parent="."]
 layout_mode = 0
@@ -111,20 +114,22 @@ color = Color(0.9604266, 0.50774413, 0.57276726, 1)
 [node name="noriBowl2" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 648.0
-offset_top = 288.0
-offset_right = 879.0
-offset_bottom = 539.0
-texture = SubResource("AtlasTexture_fyujk")
+offset_left = 668.0
+offset_top = 226.0
+offset_right = 856.0
+offset_bottom = 427.0
+texture = SubResource("AtlasTexture_nyyfw")
+stretch_mode = 5
 
 [node name="noriBowl" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 720.0
-offset_top = 336.0
-offset_right = 951.0
-offset_bottom = 587.0
-texture = SubResource("AtlasTexture_fyujk")
+offset_left = 639.0
+offset_top = 233.0
+offset_right = 948.0
+offset_bottom = 423.0
+texture = SubResource("AtlasTexture_uytxe")
+stretch_mode = 5
 
 [node name="nori2" type="TextureRect" parent="."]
 visible = false
@@ -142,6 +147,11 @@ offset_top = 664.0
 offset_right = 1208.0
 offset_bottom = 664.0
 
+[node name="Shoyu" type="Sprite2D" parent="."]
+position = Vector2(1168, 256)
+scale = Vector2(1.2281251, 1.1888889)
+texture = ExtResource("4_6hp1t")
+
 [node name="tempEgg" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
@@ -150,6 +160,11 @@ offset_top = 512.0
 offset_right = 608.0
 offset_bottom = 552.0
 color = Color(0.99193865, 0.9554681, 0.8238136, 1)
+
+[node name="NoodlesinBowl" type="Sprite2D" parent="."]
+position = Vector2(1129.0001, 265)
+scale = Vector2(1.1265625, 1.1222222)
+texture = ExtResource("5_201pe")
 
 [node name="tempBamboo" type="ColorRect" parent="."]
 visible = false

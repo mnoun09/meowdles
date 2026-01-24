@@ -45,6 +45,8 @@ var userCreation = []
 var customerInstance = customerLoad.instantiate()
 var customerExists = false
 
+var coins: int
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -168,6 +170,8 @@ func checkingIngredients() -> bool:
 		correct +=1
 	if customerOrder.has("chashu")  and userCreation.has("chashu"):
 		correct +=1
+	coins += correct * 3
+	print (coins)
 	if correct == orderSize and userCreation.size() == orderSize:
 		return true
 	return false

@@ -1,6 +1,6 @@
 extends StaticBody2D
 @onready var soup = $Soup
-@onready var noodles = $NoodlesInBowl
+@onready var noodles = $NoodlesinBowl
 @onready var nori = $Nori
 @onready var naruto = $Naruto
 var next = preload("res://buttons/nextButton.tscn")
@@ -8,7 +8,7 @@ var next = preload("res://buttons/nextButton.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	makeVisible()
-	ingredients()
+	#ingredients()
 	pass # Replace with function body.
 
 
@@ -18,13 +18,13 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_pot_clicked() -> void:
-	global.soup = true
-	global.userCreation.append("soup")
-	makeVisible()
+	if global.soup == false:
+		global.soup = true
+		global.userCreation.append("soup")
+		makeVisible()
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)
 	add_child(nextButton)
-	pass # Replace with function body.
 
 func makeVisible():
 	if global.soup:
@@ -41,3 +41,13 @@ func ingredients():
 	print ("Noodles: " + str(global.noodles))
 	print ("Nori: " + str(global.nori))
 	print ("Naruto: " + str(global.naruto))
+
+
+func _on_pot_2_pot_clicked() -> void:
+	if global.soup == false:
+		global.soup = true
+		global.userCreation.append("soup")
+		makeVisible()
+	var nextButton = next.instantiate()
+	nextButton.position = Vector2i(1008, 640)
+	add_child(nextButton)

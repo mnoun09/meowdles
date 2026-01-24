@@ -15,10 +15,13 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	noodlesInPot.visible = true
 	addTimer()
 	add_child(data)
+	
 	timer.timerDone.connect(addNoodles)
 
 func addTimer():
+	
 	timer = timerScene.instantiate()
+	print (timer.position)
 	add_child(timer)
 
 func addNoodles():

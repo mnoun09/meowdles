@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ivixopnpcnaj" path="res://stuff/timer.gd" id="1_vhelp"]
 
 [node name="Timer" type="Node2D"]
+position = Vector2(80, 232)
 script = ExtResource("1_vhelp")
 
 [node name="Timer" type="Sprite2D" parent="."]

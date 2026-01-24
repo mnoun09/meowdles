@@ -1,5 +1,5 @@
 extends TextureRect
-@onready var noriSheet: TextureRect = $"../nori2"
+@onready var noriSheet: TextureRect = $"../noriBowl"
 @onready var noriBowl = $"../noriBowl"
 @onready var noriBowl2 = $"../noriBowl2"
 

@@ -1,11 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cabwuowuqttdh"]
+[gd_scene load_steps=12 format=3 uid="uid://cabwuowuqttdh"]
 
 [ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_oqlhe"]
+[ext_resource type="Texture2D" uid="uid://dmxdi0hxscby5" path="res://assets/BetterAssets/PotsandBowl.png" id="2_b1bti"]
 [ext_resource type="Script" uid="uid://cp08revwln7ov" path="res://stuff/bowl.gd" id="2_ycmyd"]
-[ext_resource type="Texture2D" uid="uid://5a056njvmdic" path="res://assets/Soup.png" id="3_oqot4"]
+[ext_resource type="Texture2D" uid="uid://biohs2bl1u221" path="res://assets/BetterAssets/SoloNori.png" id="4_jyb2f"]
 [ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_jfd1l"]
+[ext_resource type="Texture2D" uid="uid://qq2xjsiu1l1g" path="res://assets/BetterAssets/DoubleNori.png" id="5_mbtfv"]
 [ext_resource type="Texture2D" uid="uid://dtefx4f7hwmod" path="res://assets/Naruto.png" id="6_b1bti"]
-[ext_resource type="Texture2D" uid="uid://ct0earl4auhrm" path="res://assets/NoodlesInBowl.png" id="7_b1bti"]
+[ext_resource type="Texture2D" uid="uid://b6uxi8qshqk8a" path="res://assets/BetterAssets/Tonk.png" id="6_v4t3y"]
+[ext_resource type="Texture2D" uid="uid://dq5f3qh61mmim" path="res://assets/BetterAssets/NoodlesinBowl.png" id="7_uk5ql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo4pt"]
+atlas = ExtResource("2_b1bti")
+region = Rect2(16, 394, 421, 316)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnavn"]
 atlas = ExtResource("1_oqlhe")
@@ -14,19 +21,34 @@ region = Rect2(431, 535, 478, 185)
 [node name="StaticBody2D" type="StaticBody2D" groups=["dropable"]]
 script = ExtResource("2_ycmyd")
 
+[node name="Bowl" type="Sprite2D" parent="."]
+position = Vector2(624, 608)
+texture = SubResource("AtlasTexture_eo4pt")
+
 [node name="SoupsEmptyBowl" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(624, 632)
 texture = SubResource("AtlasTexture_hnavn")
 
+[node name="SoloNori" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1024, 416)
+texture = ExtResource("4_jyb2f")
+
+[node name="DoubleNori" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1024, 416)
+texture = ExtResource("5_mbtfv")
+
 [node name="Soup" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(592, 352)
-texture = ExtResource("3_oqot4")
+position = Vector2(1040, 416)
+texture = ExtResource("6_v4t3y")
 
-[node name="NoodlesInBowl" type="Sprite2D" parent="."]
+[node name="NoodlesinBowl" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(624, 368)
-texture = ExtResource("7_b1bti")
+position = Vector2(1040, 416)
+texture = ExtResource("7_uk5ql")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -35,10 +57,10 @@ polygon = PackedVector2Array(6.699997, -92.5, -126.7, -92.5, -153.3, -88.5, -158
 
 [node name="Nori" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(600, 368)
+position = Vector2(576, 288)
 texture = ExtResource("5_jfd1l")
 
 [node name="Naruto" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(600, 352)
+position = Vector2(632, 312)
 texture = ExtResource("6_b1bti")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bac27u7ijghcd"]
+
+[ext_resource type="Texture2D" uid="uid://b4vygu6lldpky" path="res://assets/BetterAssets/Storefront.png" id="1_krot7"]
+[ext_resource type="Script" uid="uid://dccas8tty1imy" path="res://scenes/home.gd" id="1_w18ys"]
+[ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="3_reixx"]
+[ext_resource type="Texture2D" uid="uid://tuk1igra2ga3" path="res://assets/BetterAssets/Cat.png" id="4_reixx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhids"]
+atlas = ExtResource("3_reixx")
+region = Rect2(1047, 70, 193, 220)
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_w18ys")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -96.0
+offset_top = -64.0
+offset_right = 1421.0
+offset_bottom = 824.0
+color = Color(1, 0.93333334, 0.8117647, 1)
+
+[node name="Storefront" type="Sprite2D" parent="ColorRect"]
+position = Vector2(792, 424)
+texture = ExtResource("1_krot7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 112.0
+offset_right = 723.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 100
+text = "Meowdles!"
+uppercase = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1048.0
+offset_top = 272.0
+offset_right = 1352.0
+offset_bottom = 492.0
+texture_normal = SubResource("AtlasTexture_uhids")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(696, 360)
+texture = ExtResource("4_reixx")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

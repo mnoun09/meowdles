@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Meowdles"
-run/main_scene="uid://cv3hdx2chuewo"
+run/main_scene="uid://bac27u7ijghcd"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
