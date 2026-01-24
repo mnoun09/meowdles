@@ -3,11 +3,19 @@ extends TextureRect
 @onready var noriBowl = $"../noriBowl"
 @onready var noriBowl2 = $"../noriBowl2"
 
-@onready var tempNaruto = $"../tempNaruto"
-@onready var tempEgg = $"../tempEgg"
-@onready var tempBamboo = $"../tempBamboo"
-@onready var tempGreenOnion = $"../GreenOnionBowl"
-@onready var tempChashu = $"../tempChashu"
+@onready var shoyu = $"../Shoyu"
+@onready var tonk = $"../Tonk"
+@onready var naruto = $"../Naruto2"
+@onready var egg = $"../Egg2"
+@onready var bamboo = $"../Bamboo2"
+@onready var greenOnion = $"../GreenOnionBowl"
+@onready var chashu = $"../Chashu2"
+
+func _ready() -> void:
+	if global.shoyu:
+		shoyu.visible = true
+	if global.tonk:
+		tonk.visible = true
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
@@ -34,7 +42,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		print ("added")
 		global.narutoCount += 1
 		global.naruto = true
-		tempNaruto.visible = global.naruto
+		naruto.visible = global.naruto
 		print (global.naruto)
 		add_child(data)
 	if type == "egg":
@@ -43,7 +51,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		print ("added")
 		global.eggCount += 1
 		global.egg = true
-		tempEgg.visible = global.egg
+		egg.visible = global.egg
 		print (global.egg)
 		add_child(data)
 	if type == "bamboo":
@@ -52,7 +60,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		print ("added")
 		global.bambooCount += 1
 		global.bamboo = true
-		tempBamboo.visible = global.bamboo
+		bamboo.visible = global.bamboo
 		print (global.bamboo)
 		add_child(data)
 	if type == "greenOnion":
@@ -61,7 +69,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		print ("added")
 		global.greenOnionCount += 1
 		global.greenOnion = true
-		tempGreenOnion.visible = global.greenOnion
+		greenOnion.visible = global.greenOnion
 		print (global.greenOnion)
 		add_child(data)
 	if type == "chashu":
@@ -70,7 +78,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		print ("added")
 		global.chashuCount += 1
 		global.chashu = true
-		tempChashu.visible = global.chashu
+		chashu.visible = global.chashu
 		print (global.chashu)
 		add_child(data)
 	

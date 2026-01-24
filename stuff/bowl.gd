@@ -1,5 +1,6 @@
 extends StaticBody2D
-@onready var soup = $Soup
+@onready var shoyu = $Shoyu
+@onready var tonk = $Tonkotsu
 @onready var noodles = $NoodlesinBowl
 @onready var nori = $Nori
 @onready var naruto = $Naruto
@@ -18,17 +19,19 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_pot_clicked() -> void:
-	if global.soup == false:
-		global.soup = true
-		global.userCreation.append("soup")
+	if global.tonk == false:
+		global.tonk = true
+		global.userCreation.append("tonk")
 		makeVisible()
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)
 	add_child(nextButton)
 
 func makeVisible():
-	if global.soup:
-		soup.visible = global.soup
+	if global.shoyu:
+		shoyu.visible = global.shoyu
+	if global.tonk:
+		tonk.visible = global.tonk
 	if global.noodles:
 		noodles.visible = global.noodles
 	if global.nori:
@@ -44,9 +47,9 @@ func ingredients():
 
 
 func _on_pot_2_pot_clicked() -> void:
-	if global.soup == false:
-		global.soup = true
-		global.userCreation.append("soup")
+	if global.shoyu == false:
+		global.shoyu = true
+		global.userCreation.append("shoyu")
 		makeVisible()
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)

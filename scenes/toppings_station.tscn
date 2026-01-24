@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=35 format=3 uid="uid://lmdmewm2x366"]
 
 [ext_resource type="Texture2D" uid="uid://eqhyg81g5gye" path="res://assets/BetterAssets/Counter.png" id="1_h84if"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://1k86eulcapyu" path="res://buttons/doneButton.tscn" id="8_tymvg"]
 [ext_resource type="Script" uid="uid://cv8l8b2q8xu4s" path="res://scenes/egg.gd" id="10_102hl"]
 [ext_resource type="Script" uid="uid://cfpsvcp6kk0q5" path="res://scenes/bamboo.gd" id="11_h84if"]
+[ext_resource type="Texture2D" uid="uid://b6uxi8qshqk8a" path="res://assets/BetterAssets/Tonk.png" id="11_wuh7a"]
 [ext_resource type="Script" uid="uid://yfs70hwjkgnx" path="res://scenes/greenOnion.gd" id="12_wofe7"]
 [ext_resource type="Script" uid="uid://cgx6yxj7d2gj0" path="res://scenes/chashu.gd" id="13_6hp1t"]
 [ext_resource type="Texture2D" uid="uid://b1l3yoltmt0w0" path="res://assets/BetterAssets/GreenOnions.png" id="15_wofe7"]
@@ -50,6 +51,18 @@ region = Rect2(910, 360, 78, 149)
 atlas = ExtResource("4_wofe7")
 region = Rect2(1005, 504, 116, 210)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa3l8"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(1149, 424, 117, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34hax"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(910, 360, 78, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy25x"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(230, 369, 88, 115)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ca0u"]
 atlas = ExtResource("15_wofe7")
 region = Rect2(1064, 585, 171, 88)
@@ -57,6 +70,10 @@ region = Rect2(1064, 585, 171, 88)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y340w"]
 atlas = ExtResource("15_wofe7")
 region = Rect2(1082, 588, 123, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp2jx"]
+atlas = ExtResource("4_wofe7")
+region = Rect2(71, 545, 66, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_201pe"]
 atlas = ExtResource("4_wofe7")
@@ -148,9 +165,16 @@ offset_right = 1208.0
 offset_bottom = 664.0
 
 [node name="Shoyu" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1168, 256)
 scale = Vector2(1.2281251, 1.1888889)
 texture = ExtResource("4_6hp1t")
+
+[node name="Tonk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1168, 256)
+scale = Vector2(1.2281251, 1.1888889)
+texture = ExtResource("11_wuh7a")
 
 [node name="tempEgg" type="ColorRect" parent="."]
 visible = false
@@ -220,9 +244,26 @@ offset_bottom = 674.0
 texture = SubResource("AtlasTexture_wofe7")
 script = ExtResource("12_wofe7")
 
+[node name="Chashu2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(612.00006, 359.00006)
+rotation = -0.31447643
+texture = SubResource("AtlasTexture_wa3l8")
+
+[node name="Bamboo2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(808, 352)
+texture = SubResource("AtlasTexture_34hax")
+
+[node name="Egg2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(752, 394)
+rotation = -0.468395
+texture = SubResource("AtlasTexture_qy25x")
+
 [node name="GreenOnionBowl" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(682.75, 522)
+position = Vector2(670, 416.00003)
 scale = Vector2(1.3421053, 1.5)
 texture = SubResource("AtlasTexture_8ca0u")
 
@@ -231,6 +272,11 @@ visible = false
 position = Vector2(9.25, 8.25)
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_y340w")
+
+[node name="Naruto2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(517, 393)
+texture = SubResource("AtlasTexture_xp2jx")
 
 [node name="Chashu" type="TextureRect" parent="."]
 layout_mode = 0

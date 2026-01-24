@@ -7,7 +7,8 @@ var correctReactions = [preload("res://stuff/same.tscn"), preload("res://stuff/s
 var wrong = preload("res://stuff/wrong.tscn")
 
 var isDragging = false
-var soup = false
+var shoyu = false
+var tonk = false
 var noodles =  false
 var nori = false
 var noriCount: int
@@ -22,7 +23,8 @@ var greenOnionCount: int
 var chashu = false
 var chashuCount: int
 
-var wantSoup = false
+var wantShoyu = false
+var wantTonk = false
 var wantNoodles =  false
 var wantNori = false
 var wantNoriCount: int
@@ -39,7 +41,8 @@ var wantChashuCount: int
 
 var toppings = ["nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
 
-var customerOrder = ["soup", "noodles"]
+var soupbase = ["shoyu", "tonk"]
+var customerOrder = [soupbase.pick_random(), "noodles"]
 var userCreation = []
 
 var customerInstance = customerLoad.instantiate()
@@ -80,7 +83,8 @@ func order():
 func reset():
 	print ("reset")
 	isDragging = false
-	soup = false
+	shoyu = false
+	tonk = false
 	noodles =  false
 	nori = false
 	noriCount = 0
@@ -95,12 +99,13 @@ func reset():
 	chashu = false
 	chashuCount = 0
 
-	customerOrder = ["soup", "noodles"]
+	customerOrder = [soupbase.pick_random(), "noodles"]
 	toppings = ["nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
 	userCreation = []
 	customerExists = false
 	
-	wantSoup = false
+	wantShoyu = false
+	wantTonk = false
 	wantNoodles = false
 	wantNori = false
 	wantNoriCount = 0
@@ -116,8 +121,10 @@ func reset():
 	wantChashuCount = 0
 	
 func customerOrderPreview():
-	if customerOrder.has("soup"):
-		wantSoup = true
+	if customerOrder.has("shoyu"):
+		wantShoyu = true
+	if customerOrder.has("tonk"):
+		wantTonk = true
 	if customerOrder.has("noodles"):
 		wantNoodles = true
 	if customerOrder.has("nori"):
@@ -152,7 +159,10 @@ func checkingIngredients() -> bool:
 	var orderSize = customerOrder.size() 
 	var correct : int
 	var amountAdded : int
-	if customerOrder.has("soup") and userCreation.has("soup"):
+	if customerOrder.has("shoyu") and userCreation.has("shoyu"):
+		correct +=1
+		amountAdded +=1
+	if customerOrder.has("tonkotsu") and userCreation.has("tonkotsu"):
 		correct +=1
 		amountAdded +=1
 	if customerOrder.has("noodles") and userCreation.has("noodles"):

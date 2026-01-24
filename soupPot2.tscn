@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://doxe257fhgmsb"]
+
+[ext_resource type="Script" uid="uid://djip1p4200dte" path="res://stuff/soup_pot.gd" id="1_u2ij7"]
+[ext_resource type="Texture2D" uid="uid://dmdx8e62eltwk" path="res://assets/BetterAssets/ShoyuPot.png" id="2_4264r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukbc8"]
+atlas = ExtResource("2_4264r")
+region = Rect2(377, 179, 433, 329)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_u2ij7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 56)
+texture = SubResource("AtlasTexture_ukbc8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 56)
+polygon = PackedVector2Array(74, -164.5, -70, -164.5, -100.8, -160.5, -106.8, -160.5, -136.8, -151.5, -140, -151.5, -196, -124.5, -198.3, -124.5, -211.3, -111.5, -212.8, -111.5, -216.5, -103.2, -216.5, -75.7, -215.5, -74.7, -215.5, -72.4, -206.5, -66.4, -206.5, -64.9, -184.7, -59.5, -174.3, -59.5, -164.5, 25.699997, -164.5, 32.699997, -151.5, 84.5, -151.5, 88.899994, -144.5, 104.79999, -144.5, 108, -131.5, 130.9, -131.5, 133.4, -121.5, 142.29999, -121.5, 143.70001, -107.5, 151.6, -107.5, 153, -91.5, 157.9, -91.5, 159.20001, -59.699997, 164.5, 63.399994, 164.5, 70.79999, 163.5, 76.899994, 163.5, 86.899994, 159.5, 90.899994, 159.5, 108.899994, 151.5, 111.29999, 151.5, 119.20001, 144.5, 121.399994, 144.5, 131.4, 132.5, 132.79999, 132.5, 144.70001, 106.5, 146, 106.5, 153, 82.5, 154.20001, 82.5, 167.20001, 14.5, 168.29999, 14.5, 174.5, -53.4, 174.5, -58.800003, 197.79999, -62.5, 201.1, -62.5, 207.1, -66.5, 209.5, -66.5, 216.5, -75.5, 216.5, -105.6, 204.5, -119.3, 204.5, -120.7, 175.5, -135.8, 175.5, -136.9, 134.5, -152.9, 134.5, -154.2, 97.5, -161.2, 97.5, -162.3)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

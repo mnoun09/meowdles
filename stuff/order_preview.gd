@@ -12,8 +12,10 @@ func _process(delta: float) -> void:
 	pass
 
 func order():
-	if global.wantSoup:
-		$Soup.visible = true
+	if global.wantShoyu:
+		$Shoyu.visible = true
+	if global.wantTonk:
+		$Tonk.visible = true
 	if global.wantNoodles:
 		$Noodles.visible = true
 	if global.wantNori:

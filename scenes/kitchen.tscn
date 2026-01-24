@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5homck0xmmaw"]
+[gd_scene load_steps=6 format=3 uid="uid://c5homck0xmmaw"]
 
 [ext_resource type="Texture2D" uid="uid://eqhyg81g5gye" path="res://assets/BetterAssets/Counter.png" id="1_bems3"]
 [ext_resource type="PackedScene" uid="uid://clhkwlji7ujvs" path="res://stuff/soupPot.tscn" id="2_mrp8g"]
 [ext_resource type="PackedScene" uid="uid://cabwuowuqttdh" path="res://stuff/bowl.tscn" id="3_2b6py"]
 [ext_resource type="PackedScene" uid="uid://bplge8oh70lj2" path="res://buttons/customersButton.tscn" id="3_bems3"]
+[ext_resource type="PackedScene" uid="uid://doxe257fhgmsb" path="res://soupPot2.tscn" id="5_v3ycp"]
 
 [node name="Kitchen" type="Node2D"]
 
@@ -26,15 +27,15 @@ position = Vector2(576, 288)
 [node name="Bowl" parent="." instance=ExtResource("3_2b6py")]
 position = Vector2(-408, -48)
 
-[node name="Pot2" parent="." instance=ExtResource("2_mrp8g")]
-position = Vector2(1032, 288)
-
 [node name="Customers" parent="." instance=ExtResource("3_bems3")]
 visible = false
 offset_left = 24.0
 offset_top = 40.0
 offset_right = 24.0
 offset_bottom = 40.0
+
+[node name="Pot2" parent="." instance=ExtResource("5_v3ycp")]
+position = Vector2(1056, 288)
 
 [connection signal="potClicked" from="Pot" to="Bowl" method="_on_area_2d_pot_clicked"]
 [connection signal="potClicked" from="Pot2" to="Bowl" method="_on_pot_2_pot_clicked"]

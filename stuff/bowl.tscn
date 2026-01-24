@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cabwuowuqttdh"]
+[gd_scene load_steps=11 format=3 uid="uid://cabwuowuqttdh"]
 
 [ext_resource type="Texture2D" uid="uid://btc6ddibvp382" path="res://assets/SoupsEmptyBowl.png" id="1_oqlhe"]
 [ext_resource type="Texture2D" uid="uid://dmxdi0hxscby5" path="res://assets/BetterAssets/PotsandBowl.png" id="2_b1bti"]
 [ext_resource type="Script" uid="uid://cp08revwln7ov" path="res://stuff/bowl.gd" id="2_ycmyd"]
 [ext_resource type="Texture2D" uid="uid://biohs2bl1u221" path="res://assets/BetterAssets/SoloNori.png" id="4_jyb2f"]
-[ext_resource type="Texture2D" uid="uid://vxnxulrac3l7" path="res://assets/Nori.png" id="5_jfd1l"]
 [ext_resource type="Texture2D" uid="uid://qq2xjsiu1l1g" path="res://assets/BetterAssets/DoubleNori.png" id="5_mbtfv"]
-[ext_resource type="Texture2D" uid="uid://dtefx4f7hwmod" path="res://assets/Naruto.png" id="6_b1bti"]
 [ext_resource type="Texture2D" uid="uid://b6uxi8qshqk8a" path="res://assets/BetterAssets/Tonk.png" id="6_v4t3y"]
+[ext_resource type="Texture2D" uid="uid://bel5e8lg5tu0r" path="res://assets/BetterAssets/Shoyu.png" id="7_eo4pt"]
 [ext_resource type="Texture2D" uid="uid://dq5f3qh61mmim" path="res://assets/BetterAssets/NoodlesinBowl.png" id="7_uk5ql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eo4pt"]
@@ -40,10 +39,15 @@ visible = false
 position = Vector2(1024, 416)
 texture = ExtResource("5_mbtfv")
 
-[node name="Soup" type="Sprite2D" parent="."]
+[node name="Tonkotsu" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1040, 416)
 texture = ExtResource("6_v4t3y")
+
+[node name="Shoyu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1040, 416)
+texture = ExtResource("7_eo4pt")
 
 [node name="NoodlesinBowl" type="Sprite2D" parent="."]
 visible = false
@@ -54,13 +58,3 @@ texture = ExtResource("7_uk5ql")
 visible = false
 position = Vector2(624, 632)
 polygon = PackedVector2Array(6.699997, -92.5, -126.7, -92.5, -153.3, -88.5, -158.3, -88.5, -195.3, -76.5, -198.5, -76.5, -221.5, -64.5, -223.8, -64.5, -237.9, -51.5, -239, -51.5, -239, -19.699997, -237, -17.699997, -237, -14.800003, -239, -8.800003, -239, 39.399994, -235, 52.699997, -235, 55.899994, -220, 90.8, -220, 92.5, 218.4, 92.5, 228, 79.5, 229.4, 79.5, 232.4, 70.5, 233.6, 70.5, 238.70001, 45.5, 239, -1.199997, 237.9, -17.699997, 239, -19.599998, 239, -47.3, 225.79999, -59.5, 224, -70.8, 224, -73.5, 211.9, -73.5, 207.9, -67.5, 206.29999, -67.5, 165, -80, 165, -81.3, 119, -87.3, 119, -88.5, 50.200012, -88.5)
-
-[node name="Nori" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(576, 288)
-texture = ExtResource("5_jfd1l")
-
-[node name="Naruto" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(632, 312)
-texture = ExtResource("6_b1bti")
