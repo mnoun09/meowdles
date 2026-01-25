@@ -1,22 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2hbwfko2e3r"]
+[gd_scene load_steps=6 format=3 uid="uid://c2hbwfko2e3r"]
 
 [ext_resource type="Texture2D" uid="uid://c6dc56743fou3" path="res://assets/Timer.png" id="1_ckxkr"]
 [ext_resource type="Script" uid="uid://ivixopnpcnaj" path="res://stuff/timer.gd" id="1_vhelp"]
+[ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="2_40amo"]
+[ext_resource type="FontFile" uid="uid://416ud3q5w3yy" path="res://Sigmar_One/SigmarOne-Regular.ttf" id="4_g7op6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kma7k"]
+atlas = ExtResource("2_40amo")
+region = Rect2(343, 70, 18, 19)
 
 [node name="Timer" type="Node2D"]
-position = Vector2(80, 232)
+position = Vector2(355, 394)
 script = ExtResource("1_vhelp")
 
+[node name="SpriteSheetForBasicPack" type="Sprite2D" parent="."]
+position = Vector2(672, 136.00006)
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_kma7k")
+
 [node name="Timer" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(640, 360)
 texture = ExtResource("1_ckxkr")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 640.0
-offset_top = 96.0
-offset_right = 712.0
-offset_bottom = 168.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 636.0
+offset_top = 88.0
+offset_right = 708.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0.7137255, 0.5372549, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("4_g7op6")
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1

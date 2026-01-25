@@ -23,10 +23,10 @@ position = Vector2(680, 360)
 texture = ExtResource("2_tefeu")
 
 [node name="Pot Icon" parent="." instance=ExtResource("5_85g3d")]
-offset_left = 1104.0
-offset_top = 40.0
-offset_right = 1104.0
-offset_bottom = 40.0
+offset_left = 1091.0
+offset_top = 209.0
+offset_right = 1091.0
+offset_bottom = 209.0
 
 [node name="Storefront" type="Sprite2D" parent="."]
 position = Vector2(696, 360)
@@ -37,7 +37,7 @@ position = Vector2(696, 360)
 texture = ExtResource("5_tbgi4")
 
 [node name="Shop" parent="." instance=ExtResource("6_tefeu")]
-offset_left = 1120.0
-offset_top = 200.0
-offset_right = 1120.0
-offset_bottom = 200.0
+offset_left = 1089.0
+offset_top = 60.0
+offset_right = 1089.0
+offset_bottom = 60.0

@@ -20,6 +20,8 @@ func order():
 		$Noodles.visible = true
 	if global.wantNori:
 		$Nori.visible = true
+		if global.wantNoriCount == 2:
+			$DoubleNori.visible = true
 	if global.wantNaruto:
 		$Naruto.visible = true
 	if global.wantEgg:

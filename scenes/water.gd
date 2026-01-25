@@ -27,7 +27,7 @@ func addTimer():
 func addNoodles():
 	#add_child(noodlesInBowl)
 	var nextButton = next.instantiate()
-	nextButton.position = Vector2i(1008, 640)
+	nextButton.position = Vector2i(1480, 480)
 	global.noodles = true
 	noodlesInPot.visible = false
 	global.userCreation.append("noodles")

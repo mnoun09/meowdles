@@ -4,7 +4,7 @@ signal checking
 
 var customerLoad = preload("res://stuff/customer.tscn")
 var correctReactions = [preload("res://stuff/same.tscn"), preload("res://stuff/same1.tscn")]
-var wrong = preload("res://stuff/wrong.tscn")
+var wrongReactions = [preload("res://stuff/wrong.tscn"), preload("res://wrong1.tscn")]
 
 var isDragging = false
 var shoyu = false
@@ -39,7 +39,7 @@ var wantGreenOnionCount: int
 var wantChashu = false
 var wantChashuCount: int
 
-var toppings = ["nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
+var toppings = ["nori", "nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
 
 var soupbase = ["shoyu", "tonk"]
 
@@ -67,7 +67,7 @@ func check():
 		spawn(correctReactions.pick_random())
 	else:
 		print ("wrong")
-		spawn(wrong)
+		spawn(wrongReactions.pick_random())
 	await get_tree().create_timer(2.0).timeout	
 	reset() 
 
@@ -171,6 +171,8 @@ func checkingIngredients() -> bool:
 		amountAdded +=1
 	if customerOrder.has("nori") and userCreation.has("nori"):
 		correct +=1
+		if wantNoriCount == 2 and wantNoriCount == noriCount:
+			correct +=1
 	if customerOrder.has("naruto") and userCreation.has("naruto"):
 		correct +=1
 	if customerOrder.has("egg") and userCreation.has("egg"):

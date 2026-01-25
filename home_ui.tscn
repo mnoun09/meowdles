@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cabek1j1g0gq0"]
+[gd_scene load_steps=19 format=3 uid="uid://cabek1j1g0gq0"]
 
 [ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="1_i7dhl"]
 [ext_resource type="FontFile" uid="uid://416ud3q5w3yy" path="res://Sigmar_One/SigmarOne-Regular.ttf" id="1_nh1v6"]
@@ -6,11 +6,23 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plyxl"]
 texture = ExtResource("1_i7dhl")
-region_rect = Rect2(163, 178, 90, 27)
+region_rect = Rect2(163, 210, 90, 27)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j02rv"]
 texture = ExtResource("1_i7dhl")
+region_rect = Rect2(259, 212, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26d61"]
+texture = ExtResource("1_i7dhl")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aac42"]
+texture = ExtResource("1_i7dhl")
 region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j02rv"]
+atlas = ExtResource("1_i7dhl")
+region = Rect2(883, 212, 11, 9)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhu8p"]
 texture = ExtResource("1_i7dhl")
@@ -31,6 +43,15 @@ region_rect = Rect2(292, 18, 7, 12)
 [sub_resource type="AtlasTexture" id="AtlasTexture_plyxl"]
 atlas = ExtResource("1_i7dhl")
 region = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plyxl"]
+bg_color = Color(0.43137255, 0, 0, 0.4392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhu8p"]
+bg_color = Color(0.36078432, 0, 0, 0.58431375)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j02rv"]
+bg_color = Color(0.36078432, 0, 0, 0.58431375)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ur68"]
 texture = ExtResource("1_i7dhl")
@@ -98,11 +119,12 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_plyxl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j02rv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
-text = "Play
+text = "
 "
 icon_alignment = 1
 
-[node name="Middle" type="Button" parent="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+[node name="Middle1" type="Button" parent="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -113,8 +135,6 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_plyxl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j02rv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
-text = "Store
-"
 icon_alignment = 1
 
 [node name="Bottom" type="Button" parent="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
@@ -132,7 +152,22 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
 text = "Settings
 "
 
+[node name="Middle" type="Button" parent="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_26d61")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aac42")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aac42")
+
+[node name="SpriteSheetForBasicPack" type="Sprite2D" parent="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Middle"]
+position = Vector2(204, 48.999992)
+scale = Vector2(7, 7)
+texture = SubResource("AtlasTexture_j02rv")
+
 [node name="StoreMenu" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -261,6 +296,13 @@ text = "Description"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.43137255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nh1v6")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_plyxl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dhu8p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j02rv")
+text = "Buy"
 
 [node name="left2" type="Button" parent="StoreMenu/MarginContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
@@ -273,5 +315,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_xwm5o")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xwm5o")
 
 [connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Top" to="Menu" method="_on_top_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Middle1" to="Menu" method="_on_middle_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Middle" to="Menu" method="_on_middle_pressed"]
 [connection signal="pressed" from="StoreMenu/exitButton/MarginContainer/Button" to="Menu" method="_on_button_pressed"]

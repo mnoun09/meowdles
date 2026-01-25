@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://1k86eulcapyu"]
+[gd_scene load_steps=5 format=3 uid="uid://1k86eulcapyu"]
 
 [ext_resource type="Script" uid="uid://bv66e3g4mhdfw" path="res://buttons/done_button.gd" id="1_tdqf6"]
+[ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="2_tkvv4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3m8t"]
+texture = ExtResource("2_tkvv4")
+region_rect = Rect2(837, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guha5"]
+texture = ExtResource("2_tkvv4")
+region_rect = Rect2(869, 70, 22, 22)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,9 +21,12 @@ grow_vertical = 2
 script = ExtResource("1_tdqf6")
 
 [node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-text = "done"
+theme_override_styles/normal = SubResource("StyleBoxTexture_c3m8t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_guha5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_guha5")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

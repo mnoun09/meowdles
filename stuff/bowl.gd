@@ -33,7 +33,7 @@ func _on_area_2d_pot_clicked() -> void:
 		print ("tonk")
 		print (global.tonk)
 	var nextButton = next.instantiate()
-	nextButton.position = Vector2i(1008, 640)
+	nextButton.position = Vector2i(1520, 620)
 	add_child(nextButton)
 
 func makeVisible():
@@ -71,5 +71,5 @@ func _on_pot_2_pot_clicked() -> void:
 		print (global.tonk)
 		makeVisible()
 	var nextButton = next.instantiate()
-	nextButton.position = Vector2i(1008, 640)
+	nextButton.position = Vector2i(1520, 620)
 	add_child(nextButton)

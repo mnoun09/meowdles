@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://lmdmewm2x366"]
+[gd_scene load_steps=37 format=3 uid="uid://lmdmewm2x366"]
 
 [ext_resource type="Texture2D" uid="uid://eqhyg81g5gye" path="res://assets/BetterAssets/Counter.png" id="1_h84if"]
 [ext_resource type="Script" uid="uid://d1btmn0o74g71" path="res://bowl.gd" id="2_e44xq"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cfpsvcp6kk0q5" path="res://scenes/bamboo.gd" id="11_h84if"]
 [ext_resource type="Texture2D" uid="uid://b6uxi8qshqk8a" path="res://assets/BetterAssets/Tonk.png" id="11_wuh7a"]
 [ext_resource type="Script" uid="uid://yfs70hwjkgnx" path="res://scenes/greenOnion.gd" id="12_wofe7"]
+[ext_resource type="Texture2D" uid="uid://mjipd3f4pho8" path="res://assets/BetterAssets/BowlOutline.png" id="12_y340w"]
 [ext_resource type="Script" uid="uid://cgx6yxj7d2gj0" path="res://scenes/chashu.gd" id="13_6hp1t"]
 [ext_resource type="Texture2D" uid="uid://b1l3yoltmt0w0" path="res://assets/BetterAssets/GreenOnions.png" id="15_wofe7"]
 
@@ -38,6 +39,10 @@ region = Rect2(295, 345, 93, 130)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyujk"]
 atlas = ExtResource("5_tymvg")
 region = Rect2(710, 478, 159, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d87h2"]
+atlas = ExtResource("12_y340w")
+region = Rect2(52, 468, 350, 79)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hp1t"]
 atlas = ExtResource("4_wofe7")
@@ -159,15 +164,14 @@ texture = SubResource("AtlasTexture_fyujk")
 
 [node name="DoneButton" parent="." instance=ExtResource("8_tymvg")]
 layout_mode = 1
-offset_left = 1208.0
-offset_top = 664.0
-offset_right = 1208.0
-offset_bottom = 664.0
+offset_left = 1149.0
+offset_top = 592.0
+offset_right = 1149.0
+offset_bottom = 592.0
 
 [node name="Shoyu" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1168, 256)
-scale = Vector2(1.2281251, 1.1888889)
+position = Vector2(1168.0001, 256.50006)
+scale = Vector2(1.2281251, 1.2097223)
 texture = ExtResource("4_6hp1t")
 
 [node name="Tonk" type="Sprite2D" parent="."]
@@ -175,6 +179,11 @@ visible = false
 position = Vector2(1168, 256)
 scale = Vector2(1.2281251, 1.1888889)
 texture = ExtResource("11_wuh7a")
+
+[node name="BowlOutline" type="Sprite2D" parent="."]
+position = Vector2(659, 432.175)
+scale = Vector2(1.3314285, 1.3715191)
+texture = SubResource("AtlasTexture_d87h2")
 
 [node name="tempEgg" type="ColorRect" parent="."]
 visible = false

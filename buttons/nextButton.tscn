@@ -1,20 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfk3uxmltjvv5"]
+[gd_scene load_steps=5 format=3 uid="uid://bfk3uxmltjvv5"]
 
 [ext_resource type="Script" uid="uid://cj7qfgwne8y0a" path="res://nextButton.gd" id="1_84j6r"]
+[ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="2_k54p2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywwrb"]
+texture = ExtResource("2_k54p2")
+region_rect = Rect2(837, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqw7a"]
+texture = ExtResource("2_k54p2")
+region_rect = Rect2(869, 70, 22, 22)
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_84j6r")
 
 [node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 40.0
-text = "next"
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ywwrb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iqw7a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iqw7a")
+text = "
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
