@@ -26,10 +26,11 @@ position = Vector2(792, 424)
 texture = ExtResource("1_krot7")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 64.0
+offset_left = 96.0
 offset_top = 88.0
-offset_right = 1166.0
+offset_right = 1198.0
 offset_bottom = 359.0
+size_flags_horizontal = 0
 theme_type_variation = &"GraphFrameTitleLabel"
 theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
 theme_override_colors/font_shadow_color = Color(0.3621957, 4.301686e-07, 7.219613e-08, 0.5764706)
@@ -41,6 +42,7 @@ theme_override_constants/shadow_outline_size = 30
 theme_override_fonts/font = ExtResource("3_yxilm")
 theme_override_font_sizes/font_size = 180
 text = "Meowdles!"
+horizontal_alignment = 1
 uppercase = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -54,10 +56,6 @@ texture_normal = SubResource("AtlasTexture_uhids")
 [node name="Cat" type="Sprite2D" parent="."]
 position = Vector2(696, 360)
 texture = ExtResource("4_reixx")
-
-[node name="Play" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
 
 [node name="HomeUI" parent="." instance=ExtResource("6_yxilm")]
 offset_left = 1024.0
