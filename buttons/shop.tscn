@@ -1,15 +1,20 @@
-[gd_scene format=3 uid="uid://c8qiautnqvut1"]
+[gd_scene load_steps=2 format=3 uid="uid://c8qiautnqvut1"]
 
-[node name="Shop" type="Control"]
+[ext_resource type="Script" uid="uid://c14tbj3ekldap" path="res://buttons/home.gd" id="1_nojbe"]
+
+[node name="Home" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nojbe")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 64.0
 text = "Shop"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://cabek1j1g0gq0"]
+
+[ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="1_i7dhl"]
+[ext_resource type="FontFile" uid="uid://416ud3q5w3yy" path="res://Sigmar_One/SigmarOne-Regular.ttf" id="1_nh1v6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plyxl"]
+texture = ExtResource("1_i7dhl")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j02rv"]
+texture = ExtResource("1_i7dhl")
+region_rect = Rect2(259, 180, 90, 25)
+
+[node name="HomeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+size_flags_vertical = 8
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Top" type="Button" parent="MarginContainer/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
+theme_override_fonts/font = ExtResource("1_nh1v6")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_plyxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j02rv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
+text = "Play
+"
+icon_alignment = 1
+
+[node name="Middle" type="Button" parent="MarginContainer/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
+theme_override_fonts/font = ExtResource("1_nh1v6")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_plyxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j02rv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
+text = "Store
+"
+icon_alignment = 1
+
+[node name="Bottom" type="Button" parent="MarginContainer/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
+theme_override_fonts/font = ExtResource("1_nh1v6")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_plyxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j02rv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j02rv")
+text = "Settings
+"

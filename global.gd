@@ -42,6 +42,7 @@ var wantChashuCount: int
 var toppings = ["nori", "naruto", "egg", "bamboo", "greenOnion", "chashu"]
 
 var soupbase = ["shoyu", "tonk"]
+
 var customerOrder = [soupbase.pick_random(), "noodles"]
 var userCreation = []
 
@@ -71,7 +72,7 @@ func check():
 	reset() 
 
 func order():
-	if customerOrder == ["soup", "noodles"]:
+	if customerOrder.has("noodles"):
 		var randomInt = randi_range(0, toppings.size())
 		for i in range(randomInt):
 			var topping = toppings.pick_random()
@@ -162,7 +163,7 @@ func checkingIngredients() -> bool:
 	if customerOrder.has("shoyu") and userCreation.has("shoyu"):
 		correct +=1
 		amountAdded +=1
-	if customerOrder.has("tonkotsu") and userCreation.has("tonkotsu"):
+	if customerOrder.has("tonk") and userCreation.has("tonk"):
 		correct +=1
 		amountAdded +=1
 	if customerOrder.has("noodles") and userCreation.has("noodles"):

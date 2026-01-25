@@ -20,9 +20,18 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_pot_clicked() -> void:
 	if global.tonk == false:
+		if global.shoyu == true:
+			global.shoyu = false
+			global.tonk = true
+			global.userCreation.erase("shoyu")
+			shoyu.visible = false
 		global.tonk = true
 		global.userCreation.append("tonk")
 		makeVisible()
+		print ("shoyu")
+		print (global.shoyu)
+		print ("tonk")
+		print (global.tonk)
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)
 	add_child(nextButton)
@@ -48,8 +57,18 @@ func ingredients():
 
 func _on_pot_2_pot_clicked() -> void:
 	if global.shoyu == false:
+		if global.tonk == true:
+			global.tonk = false
+			global.userCreation.erase("tonk")
+			makeVisible()
+			tonk.visible = false
+			global.shoyu = true
 		global.shoyu = true
 		global.userCreation.append("shoyu")
+		print ("shoyu")
+		print (global.shoyu)
+		print ("tonk")
+		print (global.tonk)
 		makeVisible()
 	var nextButton = next.instantiate()
 	nextButton.position = Vector2i(1008, 640)

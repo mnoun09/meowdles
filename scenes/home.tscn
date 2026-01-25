@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bac27u7ijghcd"]
+[gd_scene load_steps=8 format=3 uid="uid://bac27u7ijghcd"]
 
 [ext_resource type="Texture2D" uid="uid://b4vygu6lldpky" path="res://assets/BetterAssets/Storefront.png" id="1_krot7"]
 [ext_resource type="Script" uid="uid://dccas8tty1imy" path="res://scenes/home.gd" id="1_w18ys"]
 [ext_resource type="Texture2D" uid="uid://bj85d1qbcq55a" path="res://assets/ToppingsStation.png" id="3_reixx"]
+[ext_resource type="FontFile" uid="uid://dfscjskffl5vf" path="res://tsuchigumo/Tsuchigumo.ttf" id="3_yxilm"]
 [ext_resource type="Texture2D" uid="uid://tuk1igra2ga3" path="res://assets/BetterAssets/Cat.png" id="4_reixx"]
+[ext_resource type="PackedScene" uid="uid://cabek1j1g0gq0" path="res://home_ui.tscn" id="6_yxilm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhids"]
 atlas = ExtResource("3_reixx")
@@ -23,16 +25,26 @@ color = Color(1, 0.93333334, 0.8117647, 1)
 position = Vector2(792, 424)
 texture = ExtResource("1_krot7")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 136.0
-offset_top = 112.0
-offset_right = 723.0
-offset_bottom = 249.0
-theme_override_font_sizes/font_size = 100
+[node name="Label2" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 88.0
+offset_right = 1166.0
+offset_bottom = 359.0
+theme_type_variation = &"GraphFrameTitleLabel"
+theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
+theme_override_colors/font_shadow_color = Color(0.3621957, 4.301686e-07, 7.219613e-08, 0.5764706)
+theme_override_colors/font_outline_color = Color(0.973535, 0.9735351, 0.973535, 1)
+theme_override_constants/shadow_offset_x = 13
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("3_yxilm")
+theme_override_font_sizes/font_size = 180
 text = "Meowdles!"
 uppercase = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 1048.0
 offset_top = 272.0
 offset_right = 1352.0
@@ -42,5 +54,16 @@ texture_normal = SubResource("AtlasTexture_uhids")
 [node name="Cat" type="Sprite2D" parent="."]
 position = Vector2(696, 360)
 texture = ExtResource("4_reixx")
+
+[node name="Play" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="HomeUI" parent="." instance=ExtResource("6_yxilm")]
+offset_left = 1024.0
+offset_top = 456.0
+offset_right = 1024.0
+offset_bottom = 456.0
+size_flags_vertical = 4
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
