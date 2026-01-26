@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func loadCustomer():
 	if global.customerExists == false:
 		customerInstance = customerLoad.instantiate()
-		customerInstance.position = Vector2(512, 584)
+		customerInstance.position = Vector2(512, 578)
 		add_child(customerInstance)
 		print ("customer loaded")
 		global.order()
@@ -22,7 +22,7 @@ func loadCustomer():
 		global.customerExists = true
 	else: 
 		customerInstance = customerLoad.instantiate()
-		customerInstance.position = Vector2(512, 584)
+		customerInstance.position = Vector2(512, 578)
 		add_child(customerInstance)
 		print ("customer loaded")
 		#play a reaction

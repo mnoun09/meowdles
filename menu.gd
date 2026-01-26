@@ -28,12 +28,12 @@ func _on_top_pressed() -> void:
 
 
 func _on_middle_pressed() -> void:
-	toggleVisibility($"../StoreMenu")
+	toggleVisibility($"../ShopMenu")
 	toggleVisibility($".")
 	pass # Replace with function body.
 
 
 func _on_button_pressed() -> void:
-	toggleVisibility($"../StoreMenu")
+	toggleVisibility($"../ShopMenu")
 	toggleVisibility($".")
 	pass # Replace with function body.

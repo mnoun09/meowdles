@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cabek1j1g0gq0"]
+[gd_scene load_steps=21 format=3 uid="uid://cabek1j1g0gq0"]
 
 [ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="1_i7dhl"]
 [ext_resource type="FontFile" uid="uid://416ud3q5w3yy" path="res://Sigmar_One/SigmarOne-Regular.ttf" id="1_nh1v6"]
 [ext_resource type="Script" uid="uid://c0til5sh8pda7" path="res://menu.gd" id="1_plyxl"]
+[ext_resource type="Script" uid="uid://kbr2i5fgah4f" path="res://shop.gd" id="4_j02rv"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="5_dhu8p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plyxl"]
 texture = ExtResource("1_i7dhl")
@@ -40,9 +42,12 @@ region_rect = Rect2(276, 18, 7, 12)
 texture = ExtResource("1_i7dhl")
 region_rect = Rect2(292, 18, 7, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_plyxl"]
-atlas = ExtResource("1_i7dhl")
-region = Rect2(59, 107, 26, 26)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xujxf"]
+bg_color = Color(0.8644163, 0.62353766, 0.51919925, 0.5882353)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plyxl"]
 bg_color = Color(0.43137255, 0, 0, 0.4392157)
@@ -166,8 +171,7 @@ position = Vector2(204, 48.999992)
 scale = Vector2(7, 7)
 texture = SubResource("AtlasTexture_j02rv")
 
-[node name="StoreMenu" type="MarginContainer" parent="."]
-visible = false
+[node name="ShopMenu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,8 +187,9 @@ grow_vertical = 2
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 800
 theme_override_constants/margin_bottom = 100
+script = ExtResource("4_j02rv")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="StoreMenu"]
+[node name="NinePatchRect" type="NinePatchRect" parent="ShopMenu"]
 custom_minimum_size = Vector2(800, 400)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -196,15 +201,15 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Title" type="HBoxContainer" parent="StoreMenu"]
+[node name="Title" type="HBoxContainer" parent="ShopMenu"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 30
 
-[node name="Control" type="Control" parent="StoreMenu/Title"]
+[node name="Control" type="Control" parent="ShopMenu/Title"]
 layout_mode = 2
 
-[node name="Shop" type="Label" parent="StoreMenu/Title"]
+[node name="Shop" type="Label" parent="ShopMenu/Title"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
@@ -215,17 +220,17 @@ theme_override_font_sizes/font_size = 60
 text = "Shop"
 vertical_alignment = 1
 
-[node name="exitButton" type="HBoxContainer" parent="StoreMenu"]
+[node name="exitButton" type="HBoxContainer" parent="ShopMenu"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="StoreMenu/exitButton"]
+[node name="MarginContainer" type="MarginContainer" parent="ShopMenu/exitButton"]
 layout_mode = 2
 theme_override_constants/margin_top = -15
 theme_override_constants/margin_right = -15
 
-[node name="Button" type="Button" parent="StoreMenu/exitButton/MarginContainer"]
+[node name="Button" type="Button" parent="ShopMenu/exitButton/MarginContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -234,17 +239,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_dhu8p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_xujxf")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xujxf")
 
-[node name="MarginContainer" type="MarginContainer" parent="StoreMenu"]
+[node name="Stuff" type="MarginContainer" parent="ShopMenu"]
 layout_mode = 2
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="StoreMenu/MarginContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="ShopMenu/Stuff"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 40
 
-[node name="left" type="Button" parent="StoreMenu/MarginContainer/HBoxContainer3"]
+[node name="left" type="Button" parent="ShopMenu/Stuff/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -254,26 +259,47 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jpqux")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jpqux")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jpqux")
 
-[node name="ColorRect" type="ColorRect" parent="StoreMenu/MarginContainer/HBoxContainer3"]
+[node name="Panel" type="Panel" parent="ShopMenu/Stuff/HBoxContainer3"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_xujxf")
+
+[node name="TextureRect" type="TextureRect" parent="ShopMenu/Stuff/HBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dhu8p")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="ShopMenu/Stuff/HBoxContainer3"]
+visible = false
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.8627451, 0.7254902, 0.5411765, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="StoreMenu/MarginContainer/HBoxContainer3"]
-visible = false
-position = Vector2(247.5, 326)
-scale = Vector2(8, 8)
-texture = SubResource("AtlasTexture_plyxl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="StoreMenu/MarginContainer/HBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopMenu/Stuff/HBoxContainer3"]
+custom_minimum_size = Vector2(340, 10)
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 1
 
-[node name="Name" type="Label" parent="StoreMenu/MarginContainer/HBoxContainer3/VBoxContainer"]
+[node name="Name" type="Label" parent="ShopMenu/Stuff/HBoxContainer3/VBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
@@ -281,18 +307,22 @@ theme_override_fonts/font = ExtResource("1_nh1v6")
 theme_override_font_sizes/font_size = 50
 text = "Name"
 
-[node name="Descript" type="Label" parent="StoreMenu/MarginContainer/HBoxContainer3/VBoxContainer"]
+[node name="Des" type="Label" parent="ShopMenu/Stuff/HBoxContainer3/VBoxContainer"]
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_nh1v6")
-theme_override_font_sizes/font_size = 50
-text = "Description"
+theme_override_font_sizes/font_size = 25
+text = "Description la lalal
+"
+autowrap_mode = 2
+text_overrun_behavior = 2
 
-[node name="Button" type="Button" parent="StoreMenu/MarginContainer/HBoxContainer3/VBoxContainer"]
+[node name="Buy" type="Button" parent="ShopMenu/Stuff/HBoxContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_vertical = 4
@@ -303,8 +333,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_plyxl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dhu8p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j02rv")
 text = "Buy"
+text_overrun_behavior = 2
 
-[node name="left2" type="Button" parent="StoreMenu/MarginContainer/HBoxContainer3"]
+[node name="right" type="Button" parent="ShopMenu/Stuff/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -317,4 +348,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xwm5o")
 [connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Top" to="Menu" method="_on_top_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Middle1" to="Menu" method="_on_middle_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/Middle" to="Menu" method="_on_middle_pressed"]
-[connection signal="pressed" from="StoreMenu/exitButton/MarginContainer/Button" to="Menu" method="_on_button_pressed"]
+[connection signal="pressed" from="ShopMenu/exitButton/MarginContainer/Button" to="Menu" method="_on_button_pressed"]
+[connection signal="pressed" from="ShopMenu/Stuff/HBoxContainer3/left" to="ShopMenu" method="_on_left_pressed"]
+[connection signal="pressed" from="ShopMenu/Stuff/HBoxContainer3/VBoxContainer/Buy" to="ShopMenu" method="_on_buy_pressed"]
+[connection signal="pressed" from="ShopMenu/Stuff/HBoxContainer3/right" to="ShopMenu" method="_on_right_pressed"]

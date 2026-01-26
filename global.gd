@@ -188,3 +188,26 @@ func checkingIngredients() -> bool:
 	if correct == orderSize and userCreation.size() == orderSize:
 		return true
 	return false
+
+var items = {
+	0: {
+		"Image": preload("res://images/icon.jpg"),
+		"Name": "Lucky Cat",
+		"Des": "A cute cat welcoming in customers",
+		"Cost": 100
+	},
+	1: {
+		"Image": preload("res://images/godotwaka.png"),
+		"Name": "Laddle",
+		"Des": "How else would you serve soup!",
+		"Cost": 5
+	},
+	2: {
+		"Image": preload("res://images/godotwaka2.png"),
+		"Name": "Shelf",
+		"Des": "Purely decorative shelf item",
+		"Cost": 10
+	}
+}
+
+var inventory 
