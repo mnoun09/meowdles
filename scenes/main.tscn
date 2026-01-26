@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv3hdx2chuewo"]
+[gd_scene load_steps=9 format=3 uid="uid://cv3hdx2chuewo"]
 
 [ext_resource type="Script" uid="uid://d4favg6f3e6y7" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b2ne3its788kk" path="res://assets/ramenShop.png" id="2_tefeu"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://q1ofrccqvhi6" path="res://buttons/cookingButton.tscn" id="5_85g3d"]
 [ext_resource type="Texture2D" uid="uid://tuk1igra2ga3" path="res://assets/BetterAssets/Cat.png" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://c8qiautnqvut1" path="res://buttons/shop.tscn" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dy6dn6bu5nrfy" path="res://assets/Shelves.png" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://gda7xm2iqrfr" path="res://assets/LuckyCat.png" id="8_85g3d"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tbgi4")
@@ -41,3 +43,13 @@ offset_left = 1089.0
 offset_top = 60.0
 offset_right = 1089.0
 offset_bottom = 60.0
+
+[node name="Shelves" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(555, 404)
+texture = ExtResource("7_tipki")
+
+[node name="LuckyCat" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(925, 462)
+texture = ExtResource("8_85g3d")

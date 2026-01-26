@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgf3fbrxkmon"]
+[gd_scene load_steps=2 format=3 uid="uid://bgf3fbrxkmon"]
 
-[ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="1_a5i81"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_00072"]
-atlas = ExtResource("1_a5i81")
-region = Rect2(419, 163, 11, 11)
+[ext_resource type="Texture2D" uid="uid://c3k6dwxhrhvm3" path="res://assets/Reaction3.png" id="1_a5i81"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="SpriteSheetForBasicPack" type="Sprite2D" parent="."]
-position = Vector2(16, -24)
-scale = Vector2(8, 8)
-texture = SubResource("AtlasTexture_00072")
+[node name="Reaction3" type="Sprite2D" parent="."]
+position = Vector2(-16, -80)
+texture = ExtResource("1_a5i81")

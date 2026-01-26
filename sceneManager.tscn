@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://3dldmm5p2r0a"]
+
+[ext_resource type="Script" uid="uid://c47uhx1ii1nm0" path="res://scene_manager.gd" id="1_0dvso"]
+
+[sub_resource type="Animation" id="Animation_0dvso"]
+resource_name = "transition_out"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.47843137, 0.33333334, 0.23529412, 0), Color(0.47843137, 0.33333334, 0.23529412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xn7vt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.47843137, 0.33333334, 0.23529412, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17mkl"]
+_data = {
+&"RESET": SubResource("Animation_xn7vt"),
+&"transition_out": SubResource("Animation_0dvso")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0dvso")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.47843137, 0.33333334, 0.23529412, 0)
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.37320855, 0.25485638, 0.17470515, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_17mkl")
+}
+speed_scale = 1.3

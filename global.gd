@@ -191,7 +191,7 @@ func checkingIngredients() -> bool:
 
 var items = {
 	0: {
-		"Image": preload("res://images/icon.jpg"),
+		"Image": preload("res://assets/LuckyCat.png"),
 		"Name": "Lucky Cat",
 		"Des": "A cute cat welcoming in customers",
 		"Cost": 100
@@ -203,11 +203,26 @@ var items = {
 		"Cost": 5
 	},
 	2: {
-		"Image": preload("res://images/godotwaka2.png"),
+		"Image": preload("res://assets/Shelves.png"),
 		"Name": "Shelf",
 		"Des": "Purely decorative shelf item",
 		"Cost": 10
 	}
 }
 
-var inventory 
+var inventory = {
+	
+}
+
+var luckycat = false
+var laddle = false
+var shelf = false
+
+func hasItem():
+	for i in global.inventory:
+		if global.inventory[i]["Name"] == "Lucky Cat":
+			luckycat = true
+		if global.inventory[i]["Name"] == "Laddle":
+			laddle = true
+		if global.inventory[i]["Name"] == "Shelf":
+			shelf = true

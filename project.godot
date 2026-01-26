@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 global="*res://global.gd"
 customer="*res://stuff/customer.gd"
+sceneManager="*res://sceneManager.tscn"
 
 [display]
 

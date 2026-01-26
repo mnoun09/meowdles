@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://cabek1j1g0gq0"]
+[gd_scene load_steps=22 format=3 uid="uid://cabek1j1g0gq0"]
 
 [ext_resource type="Texture2D" uid="uid://dfvcg3q625ofn" path="res://assets/BetterAssets/Sprite sheet for Basic Pack.png" id="1_i7dhl"]
 [ext_resource type="FontFile" uid="uid://416ud3q5w3yy" path="res://Sigmar_One/SigmarOne-Regular.ttf" id="1_nh1v6"]
 [ext_resource type="Script" uid="uid://c0til5sh8pda7" path="res://menu.gd" id="1_plyxl"]
 [ext_resource type="Script" uid="uid://kbr2i5fgah4f" path="res://shop.gd" id="4_j02rv"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="5_dhu8p"]
+[ext_resource type="Texture2D" uid="uid://gda7xm2iqrfr" path="res://assets/LuckyCat.png" id="5_dhu8p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plyxl"]
 texture = ExtResource("1_i7dhl")
@@ -25,6 +25,10 @@ region_rect = Rect2(259, 180, 90, 25)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j02rv"]
 atlas = ExtResource("1_i7dhl")
 region = Rect2(883, 212, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhu8p"]
+atlas = ExtResource("1_i7dhl")
+region = Rect2(551, 155, 38, 17)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhu8p"]
 texture = ExtResource("1_i7dhl")
@@ -172,6 +176,7 @@ scale = Vector2(7, 7)
 texture = SubResource("AtlasTexture_j02rv")
 
 [node name="ShopMenu" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,15 +206,22 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Title" type="HBoxContainer" parent="ShopMenu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopMenu"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 420
+
+[node name="Title" type="HBoxContainer" parent="ShopMenu/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 30
 
-[node name="Control" type="Control" parent="ShopMenu/Title"]
+[node name="Control" type="Control" parent="ShopMenu/HBoxContainer/Title"]
 layout_mode = 2
 
-[node name="Shop" type="Label" parent="ShopMenu/Title"]
+[node name="Shop" type="Label" parent="ShopMenu/HBoxContainer/Title"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.79800856, 0.14977178, 2.9744804e-05, 1)
@@ -219,6 +231,32 @@ theme_override_fonts/font = ExtResource("1_nh1v6")
 theme_override_font_sizes/font_size = 60
 text = "Shop"
 vertical_alignment = 1
+
+[node name="coins" type="TextureRect" parent="ShopMenu/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_dhu8p")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="coinLabel" type="Label" parent="ShopMenu/HBoxContainer/coins"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -11.5
+offset_right = 7.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nh1v6")
+theme_override_font_sizes/font_size = 25
+text = "hi"
 
 [node name="exitButton" type="HBoxContainer" parent="ShopMenu"]
 layout_mode = 2
@@ -334,6 +372,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dhu8p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j02rv")
 text = "Buy"
 text_overrun_behavior = 2
+
+[node name="bought" type="Label" parent="ShopMenu/Stuff/HBoxContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.79607844, 0.14509805, 0, 1)
+text = "**already bought"
 
 [node name="right" type="Button" parent="ShopMenu/Stuff/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)

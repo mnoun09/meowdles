@@ -4,6 +4,11 @@ var orderPreview = preload("res://stuff/order_preview.tscn")
 var customerInstance = null
 
 func _ready() -> void:
+	global.hasItem()
+	if global.shelf:
+		$Shelves.visible = true
+	if global.luckycat:
+		$LuckyCat.visible = true
 	loadCustomer()	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
